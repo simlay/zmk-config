@@ -1,0 +1,35 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap,behavior-mouse-move,behavior-mouse-keys,behavior-mouse-scroll";
+
+        base {
+            bindings = <
+&kp TAB    &kp SQT   &kp COMMA  &kp DOT   &kp P     &kp Y        &kp F      &kp G          &kp C     &kp R  &kp L  &kp BSPC
+&kp RCTRL  &kp A     &kp O      &kp E     &kp U     &kp I        &kp D      &kp H          &kp T     &kp N  &kp S  &kp RET
+&kp LSHFT  &kp SEMI  &kp Q      &kp J     &kp K     &kp X        &kp B      &kp M          &kp W     &kp V  &kp Z  &kp RSHFT
+                                &kp LALT  &kp LGUI  &kp SPACE    &kp SPACE  &kp LC(LSHFT)  &kp RGUI
+            >;
+        };
+
+        symbols {
+            bindings = <
+&kp TAB    &kp LS(EXCL)  &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)    &kp LS(CARET)  &kp LS(AMPS)   &kp LS(STAR)  &kp LS(LPAR)  &kp LS(RPAR)  &kp BSPC
+&kp RCTRL  &kp N1        &kp N2      &kp N3         &kp N4        &kp N5           &kp N6         &kp N7         &kp N8        &kp N9        &kp N0        &kp RET
+&kp LSHFT  &kp SQT       &kp COMMA   &kp DOT        &kp LBKT      &kp LS(LBRC)     &kp LS(RBRC)   &kp RBKT       &kp FSLH      &kp BSLH      &kp FSLH      &kp RSHFT
+                                     &kp LALT       &kp LGUI      &kp SPACE        &kp SPACE      &kp LC(LSHFT)  &kp RGUI
+            >;
+        };
+
+        navigation {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+    };
+};
