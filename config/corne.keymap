@@ -3,7 +3,7 @@
 
 / {
     keymap {
-        compatible = "zmk,keymap,behavior-mouse-move,behavior-mouse-keys,behavior-mouse-scroll";
+        compatible = "zmk,keymap";
 
         base {
             bindings = <
