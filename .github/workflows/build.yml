@@ -11,7 +11,6 @@ jobs:
       keymap_patterns: 'config/*.keymap'
       config_path: keymap-drawer/config.yaml
       output_folder: keymap-drawer
-      install_branch: main
-      amend_commit: true
-      #draw_args: "ergonaut_one:'-k corne_rotated -l LAYOUT_split_3x6_3'"
+      #install_branch: main
+      #amend_commit: true
       json_path: keymap-drawer/layouts
