@@ -9,6 +9,7 @@ jobs:
     uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
     with:
       keymap_patterns: 'config/*.keymap'
+      destination: artifact
       #config_path: keymap-drawer/config.yaml
       #output_folder: keymap-drawer
       #install_branch: main
