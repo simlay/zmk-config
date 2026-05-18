@@ -14,16 +14,6 @@
                                 &kp LALT  &kp LGUI  &kp SPACE    &kp SPACE  &kp RSE  &kp RGUI
             >;
         };
-/*
-        reversebase {
-            bindings = <
-&kp BSPC    &kp L   &kp R  &kp C   &kp G     &kp F        &kp Y      &kp P          &kp DOT     &kp COMMA  &kp SQT  &kp TAB
-&kp RET  &kp S     &kp N      &kp T     &kp H     &kp D        &kp I      &kp U          &kp E     &kp O  &kp A  &kp RTCRL
-&kp LSHFT  &kp Z  &kp V      &kp W     &kp M     &kp B        &kp X      &kp K          &kp J     &kp Q  &kp SEMI  &kp RSHFT
-                                &kp LALT  &kp LGUI  &kp SPACE    &kp SPACE  &kp LC(LSHFT)  &kp RGUI
-            >;
-        };
-*/
 
         symbols {
             bindings = <
@@ -39,7 +29,7 @@
 &none  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &none  &none    &none  &none  &none  &none  &none  &none
 &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none    &none  &none  &none  &none  &none  &none
 &none  &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none  &none    &none  &none  &none  &none  &none  &none
-                        &none  &none &mkp MB1       &mkp MB2  &none  &none
+                                       &none            &none  &mkp MB1 &mkp MB2  &none  &none
             >;
         };
     };
