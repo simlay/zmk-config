@@ -50,7 +50,7 @@
 &none  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &none  &none    &none     &kp UP  &none  &none  &none  &none
 &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none    &kp LEFT     &kp DOWN  &kp RIGHT  &none  &none  &none
 &none  &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none  &none    &none     &none  &none  &none  &none  &none
-                                       &mkb MB5            &mkb MB4  &mkp MB1 &mkp MB2  &mkb MB3  &tog 0
+                                       &mkp MB5            &mkp MB4  &mkp MB1 &mkp MB2  &mkp MB3  &tog 0
             >;
         };
     };
