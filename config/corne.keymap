@@ -3,6 +3,17 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        timeout-ms = <50>; // How fast the keys must be pressed together
+
+        // This is your specific combo
+        toggle_nav_combo {
+            timeout-ms = <50>;
+            key-positions = <0 40>; // Replace with the indices of your two keys
+            bindings = <&tog 2>;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
 
@@ -11,7 +22,7 @@
 &kp TAB    &kp SQT   &kp COMMA  &kp DOT   &kp P     &kp Y        &kp F      &kp G          &kp C     &kp R  &kp L  &kp BSPC
 &kp RCTRL  &kp A     &kp O      &kp E     &kp U     &kp I        &kp D      &kp H          &kp T     &kp N  &kp S  &kp RET
 &kp LSHFT  &kp SEMI  &kp Q      &kp J     &kp K     &kp X        &kp B      &kp M          &kp W     &kp V  &kp Z  &kp RSHFT
-                                &kp LALT  &kp LGUI  &kp SPACE    &kp SPACE  &mo 1  &kp RGUI
+                                &kp LALT  &kp LGUI  &kp SPACE    &kp SPACE  &mo 1          &kp RGUI
             >;
         };
 /*
@@ -30,16 +41,16 @@
 &kp TAB    &kp EXCL  	 &kp AT      &kp POUND      &kp DLLR      &kp PRCNT    &kp CARET  &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp BSPC
 &kp RCTRL  &kp N1        &kp N2      &kp N3         &kp N4        &kp N5       &kp N6     &kp N7     &kp N8    &kp N9    &kp N0    &kp RET
 &kp LSHFT  &kp SQT       &kp COMMA   &kp DOT        &kp LBKT      &kp LBRC     &kp RBRC   &kp RBKT   &kp FSLH  &kp BSLH  &kp FSLH  &kp RSHFT
-                                     &kp LALT       &kp LGUI      &kp SPACE    &kp SPACE  &mo 0  &kp RGUI
+                                     &kp LALT       &kp LGUI      &kp SPACE    &kp SPACE  &none      &kp RGUI
             >;
         };
 
         navigation {
             bindings = <
-&none  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &none  &none    &none  &none  &none  &none  &none  &none
-&none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none  &none    &none  &none  &none  &none  &none  &none
-                                       &none            &none  &mkp MB1 &mkp MB2  &none  &none
+&none  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &none  &none    &none     &kp UP  &none  &none  &none  &none
+&none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none    &kp LEFT     &kp DOWN  &kp RIGHT  &none  &none  &none
+&none  &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none  &none    &none     &none  &none  &none  &none  &none
+                                       &mkb MB5            &mkb MB4  &mkp MB1 &mkp MB2  &mkb MB3  &tog 0
             >;
         };
     };
