@@ -13,6 +13,16 @@
             key-positions = <0 40>; // Replace with the indices of your two keys
             bindings = <&tog 2>;
         };
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&kp ESC>;
+        };
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <12 19>;
+            bindings = <&kp ESC>;
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -38,9 +48,9 @@
 
         symbols {
             bindings = <
-&kp TAB    &kp EXCL  	 &kp AT      &kp POUND      &kp DLLR      &kp PRCNT    &kp CARET  &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR  &kp BSPC
-&kp RCTRL  &kp N1        &kp N2      &kp N3         &kp N4        &kp N5       &kp N6     &kp N7     &kp N8    &kp N9    &kp N0    &kp RET
-&kp LSHFT  &kp SQT       &kp COMMA   &kp DOT        &kp LBKT      &kp LBRC     &kp RBRC   &kp RBKT   &kp FSLH  &kp BSLH  &kp FSLH  &kp RSHFT
+&kp GRAVE  &kp N1        &kp N2      &kp N3         &kp N4        &kp N5       &kp N6     &kp N7     &kp N8    &kp N9    &kp N0    &kp BSPC
+&kp RCTRL  &trans        &trans      &trans         &trans        &trans       &trans     &trans     &trans    &trans    &trans    &kp MINUS
+&kp LSHFT  &none     &kp EQUAL    &kp DOT        &kp LBKT      &kp LBRC     &kp RBRC   &kp RBKT   &kp FSLH  &kp BSLH  &trans        &kp RSHFT
                                      &kp LALT       &kp LGUI      &kp SPACE    &kp SPACE  &none      &kp RGUI
             >;
         };
