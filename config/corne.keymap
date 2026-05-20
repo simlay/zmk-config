@@ -23,6 +23,11 @@
             key-positions = <12 19>;
             bindings = <&kp BSPC>;
         };
+        combo_qwerty {
+            timeout-ms = <50>;
+            key-positions = <13 14 15 16>;
+            bindings = <&tog 3>;
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -50,7 +55,7 @@
             bindings = <
 &kp GRAVE  &kp N1        &kp N2      &kp N3         &kp N4        &kp N5       &kp N6     &kp N7     &kp N8    &kp N9    &kp N0    &kp BSPC
 &kp RCTRL  &trans        &trans      &trans         &trans        &trans       &trans     &trans     &trans    &trans    &trans    &kp MINUS
-&kp LSHFT  &none     &kp EQUAL    &kp DOT        &kp LBKT      &kp LBRC     &kp RBRC   &kp RBKT   &kp FSLH  &kp BSLH  &trans        &kp RSHFT
+&kp LSHFT  &none     &trans    &trans        &kp FSLH      &kp LBKT     &kp RBKT   &kp BSLH  &kp EQUAL &trans &trans        &kp RSHFT
                                      &kp LALT       &kp LGUI      &kp SPACE    &kp SPACE  &none      &kp RGUI
             >;
         };
@@ -61,6 +66,15 @@
 &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none    &kp LEFT     &kp DOWN  &kp RIGHT  &none  &none  &none
 &none  &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none  &none    &none     &none  &none  &none  &none  &none
                                        &mkp MB5            &mkp MB4  &mkp MB1 &mkp MB2  &mkp MB3  &tog 0
+            >;
+        };
+
+        qwerty {
+            bindings = <
+&kp TAB    &kp Q   &kp W  &kp E   &kp R     &kp T        &kp Y      &kp U          &kp I     &kp O  &kp P  &kp BSPC
+&kp RCTRL  &kp A     &kp S      &kp D     &kp F     &kp G        &kp H      &kp J          &kp K     &kp L  &kp SEMI &kp RET
+&kp LSHFT  &kp Z  &kp X      &kp C     &kp V     &kp B        &kp N      &kp M          &kp COMMA     &kp DOT  &kp FSLH  &kp RSHFT
+                                &kp LALT  &kp LGUI  &kp SPACE    &kp SPACE  &mo 1          &kp RGUI
             >;
         };
     };
