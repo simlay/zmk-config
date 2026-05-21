@@ -17,7 +17,7 @@
         // This is your specific combo
         toggle_nav_combo {
             timeout-ms = <50>;
-            key-positions = <0 40>; // Replace with the indices of your two keys
+            key-positions = <39 40>; // Replace with the indices of your two keys
             bindings = <&mo 2>;
         };
         combo_bspc {
