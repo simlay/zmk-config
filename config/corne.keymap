@@ -96,7 +96,7 @@
             bindings = <&kp RBKT>, <&kp LBKT>; };
         td_equal_minus: tap_dance_equal_minus { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&kp EQUAL>, <&kp MINUS>>; };
+            bindings = <&kp EQUAL>, <&kp MINUS>; };
 
         td_grave_bspc: tap_dance_grave_bspc { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
