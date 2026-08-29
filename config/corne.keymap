@@ -69,20 +69,6 @@
             #binding-cells = <0>;
             bindings = <&kp I>, <&kp D>, <&mt LSHIFT I>; };
 
-        /* --- Right half: top row --- */
-        td_y_f: tap_dance_y_f_r { compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp Y>, <&kp F>, <&mt RSHIFT Y>; };
-        td_f_y: tap_dance_f_y_r { compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp F>, <&kp Y>, <&mt RSHIFT F>; };
-        td_g_p: tap_dance_g_p { compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp G>, <&kp P>, <&mt RSHIFT G>; };
-        td_c_dot: tap_dance_c_dot { compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp C>, <&kp DOT>, <&mt RSHIFT C>; };
-
         /* --- Right half: home row --- */
         td_h_u: tap_dance_h_u_r { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -102,18 +88,6 @@
         td_d_i: tap_dance_d_i_r { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp D>, <&kp I>, <&mt RSHIFT D>; };
-        td_j_k: tap_dance_j_k_r { compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp J>, <&kp K>, <&mt RSHIFT J>; };
-        td_k_j: tap_dance_k_j_r { compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp K>, <&kp J>, <&mt RSHIFT K>; };
-        td_x_b: tap_dance_x_b_r { compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp X>, <&kp B>, <&mt RSHIFT X>; };
-        td_b_x: tap_dance_b_x_r { compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp B>, <&kp X>, <&mt RSHIFT B>; };
 
         /* --- Symbols layer: key symbol pairs --- */
         td_fslh_bslh: tap_dance_fslh_bslh { compatible = "zmk,behavior-tap-dance";
@@ -217,7 +191,7 @@
         base {
             bindings = <
 &td_tab_bspc      &td_sqt_l    &td_comma_r   &td_dot_c   &td_p_g     &td_y_f        &td_f_y     &td_g_p     &td_c_dot   &td_r_comma &td_l_sqt &td_bspc_tab
-&td_lctrl_ret     &td_a_s      &td_o_n       &td_e_t     &td_u_h     &td_i_d        &td_d_i     &td_u_u     &td_t_e     &td_o_n     &td_s_a     &td_ret_lctrl
+&td_lctrl_ret     &td_a_s      &td_o_n       &td_e_t     &td_u_h     &td_i_d        &td_d_i     &td_h_u     &td_t_e     &td_n_o     &td_s_a     &td_ret_lctrl
 &td_lshift_rshift &td_semi_z   &td_q_v       &td_j_w     &td_k_m     &td_x_b        &td_b_x     &td_m_k     &td_w_j     &td_v_q     &td_z_semi  &td_rshift_lshift
                                &td_lgui_rgui &td_mo1     &td_space   &td_space      &td_mo1     &td_rgui_lgui
             >;
