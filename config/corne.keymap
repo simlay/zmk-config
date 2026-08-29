@@ -158,6 +158,38 @@
         td_space: tap_dance_space { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp SPACE>, <&kp SPACE>, <&kp SPACE>; };
+
+        /* --- Number row: symbols layer --- */
+        td_1_0: tap_dance_1_0 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N1>, <&kp N0>, <&mt LSHIFT N1>; };
+        td_2_9: tap_dance_2_9 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N2>, <&kp N9>, <&mt LSHIFT N2>; };
+        td_3_8: tap_dance_3_8 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N3>, <&kp N8>, <&mt LSHIFT N3>; };
+        td_4_7: tap_dance_4_7 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N4>, <&kp N7>, <&mt LSHIFT N4>; };
+        td_5_6: tap_dance_5_6 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N5>, <&kp N6>, <&mt LSHIFT N5>; };
+        td_6_5: tap_dance_6_5 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N6>, <&kp N5>, <&mt RSHIFT N6>; };
+        td_7_4: tap_dance_7_4 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N7>, <&kp N4>, <&mt RSHIFT N7>; };
+        td_8_3: tap_dance_8_3 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N8>, <&kp N3>, <&mt RSHIFT N8>; };
+        td_9_2: tap_dance_9_2 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N9>, <&kp N2>, <&mt RSHIFT N9>; };
+        td_0_1: tap_dance_0_1 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N0>, <&kp N1>, <&mt RSHIFT N0>; };
     };
 
     combos {
@@ -204,7 +236,7 @@
 
         symbols {
             bindings = <
-&td_grave_bspc  &kp N1          &kp N2           &kp N3             &kp N4        &kp N5       &kp N6     &kp N7     &kp N8    &kp N9    &kp N0    &td_bscp_grave
+&td_grave_bspc  &td_1_0       &td_2_9          &td_3_8            &td_4_7       &td_5_6      &td_6_5    &td_7_4    &td_8_3   &td_9_2   &td_0_1   &td_bscp_grave
 &td_ctrl_minus &msc SCRL_UP &mmv MOVE_UP     &msc SCRL_DOWN     &td_fslh_bslh &td_lbkt_rbkt &td_rbkt_lbkt &td_bslh_fslh &td_equal_minus &kp UP    &trans    &td_minus_ctrl
 &kp LSHFT  &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB1      &mkp MB2    &mkp MB4    &mkp MB5   &kp LEFT  &kp DOWN  &kp RIGHT &kp RSHFT
                                             &kp LALT           &none         &kp SPACE    &kp SPACE  &none      &kp RALT
