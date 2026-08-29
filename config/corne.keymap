@@ -3,15 +3,9 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/bt.h>
 
-/*
- * MIRROR TAP-DANCE DEFINITIONS
- * ============================
- * Each tap-dance: tap=normal, double=mirrored, hold=shift+normal
- */
-
 / {
     behaviors {
-        /* --- Left half: top row --- */
+
         td_tab_bspc: tap_dance_tab_bspc { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp TAB>, <&kp BSPC>, <&mt LSHIFT TAB>; };
@@ -69,7 +63,6 @@
             #binding-cells = <0>;
             bindings = <&kp I>, <&kp D>, <&mt LSHIFT I>; };
 
-        /* --- Right half: home row --- */
         td_h_u: tap_dance_h_u_r { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp H>, <&kp U>, <&mt RSHIFT H>; };
@@ -89,7 +82,6 @@
             #binding-cells = <0>;
             bindings = <&kp D>, <&kp I>, <&mt RSHIFT D>; };
 
-        /* --- Symbols layer: key symbol pairs --- */
         td_fslh_bslh: tap_dance_fslh_bslh { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp FSLH>, <&kp BSLH>, <&mt LSHIFT FSLH>; };
@@ -105,6 +97,20 @@
         td_equal_minus: tap_dance_equal_minus { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp EQUAL>, <&kp MINUS>, <&mt RSHIFT EQUAL>; };
+
+        td_grave_bspc: tap_dance_grave_bspc { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE>, <&kp BSPC>, <&mt LSHIFT FSLH>; };
+        td_bscp_grave: tap_dance_bspc_grave { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp GRAVE>, <&mt LSHIFT FSLH>; };
+
+        td_minus_ctrl: tap_dance_minus_ctrl { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp LCTRL>, <&mt LSHIFT FSLH>; };
+        td_ctrl_minus: tap_dance_ctrl_minus { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL>, <&kp MINUS>, <&mt LSHIFT FSLH>; };
 
         /* --- Bottom row + spacebar area --- */
         td_lshift_rshift: tap_dance_lshift_rshift { compatible = "zmk,behavior-tap-dance";
@@ -143,7 +149,7 @@
         td_rshift_lshift: tap_dance_rshift_lshift { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp RSHFT>, <&kp LSHFT>, <&mt LSHIFT RSHFT>; };
-        td_lgui_rgui: tap_dance_lgui_rgui { compatible = "zmk,behavior-tap-dance";
+        td_gui_option: tap_dance_lgui_rgui { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp LGUI>, <&kp RGUI>, <&mt LSHIFT LGUI>; };
         td_mo1: tap_dance_mo1 { compatible = "zmk,behavior-tap-dance";
@@ -152,9 +158,6 @@
         td_space: tap_dance_space { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp SPACE>, <&kp SPACE>, <&kp SPACE>; };
-        td_rgui_lgui: tap_dance_rgui_lgui { compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp RGUI>, <&kp LGUI>, <&mt LSHIFT RGUI>; };
     };
 
     combos {
@@ -165,8 +168,11 @@
             key-positions = <27 28>;
             bindings = <&kp ESC>;
         };
-        /*
-
+        combo_esc_right {
+            timeout-ms = <50>;
+            key-positions = <31 32>;
+            bindings = <&kp ESC>;
+        };
         // This is your specific combo
         toggle_nav_combo {
             timeout-ms = <50>;
@@ -183,7 +189,6 @@
             key-positions = <13 14 15 16>;
             bindings = <&tog 3>;
         };
-        */
     };
     keymap {
         compatible = "zmk,keymap";
@@ -193,26 +198,16 @@
 &td_tab_bspc      &td_sqt_l    &td_comma_r   &td_dot_c   &td_p_g     &td_y_f        &td_f_y     &td_g_p     &td_c_dot   &td_r_comma &td_l_sqt &td_bspc_tab
 &td_lctrl_ret     &td_a_s      &td_o_n       &td_e_t     &td_u_h     &td_i_d        &td_d_i     &td_h_u     &td_t_e     &td_n_o     &td_s_a     &td_ret_lctrl
 &td_lshift_rshift &td_semi_z   &td_q_v       &td_j_w     &td_k_m     &td_x_b        &td_b_x     &td_m_k     &td_w_j     &td_v_q     &td_z_semi  &td_rshift_lshift
-                               &td_lgui_rgui &td_mo1     &td_space   &td_space      &td_mo1     &td_rgui_lgui
+                               &td_gui_option &td_mo1     &td_space   &td_space      &td_mo1     &td_gui_option
             >;
         };
-/*
-        reversebase {
-            bindings = <
-&kp BSPC    &kp L   &kp R  &kp C   &kp G     &kp F        &kp Y      &kp P          &kp DOT     &kp COMMA  &kp SQT  &kp TAB
-&kp RET  &kp S     &kp N      &kp T     &kp H     &kp D        &kp I      &kp U          &kp E     &kp O  &kp A  &kp RTCRL
-&kp LSHFT  &kp Z  &kp V      &kp W     &kp M     &kp B        &kp X      &kp K          &kp J     &kp Q  &kp SEMI  &kp RSHFT
-                                &kp LALT  &kp LGUI  &kp SPACE    &kp SPACE  &kp LC(LSHFT)  &kp RGUI
-            >;
-        };
-*/
 
         symbols {
             bindings = <
-&kp GRAVE  &kp N1          &kp N2           &kp N3             &kp N4        &kp N5       &kp N6     &kp N7     &kp N8    &kp N9    &kp N0    &kp BSPC
-&td_lctrl_ret &msc SCRL_UP &mmv MOVE_UP     &msc SCRL_DOWN     &td_fslh_bslh &td_lbkt_rbkt &td_rbkt_lbkt &td_bslh_fslh &td_equal_minus &kp UP    &trans    &kp MINUS
+&td_grave_bspc  &kp N1          &kp N2           &kp N3             &kp N4        &kp N5       &kp N6     &kp N7     &kp N8    &kp N9    &kp N0    &td_bscp_grave
+&td_ctrl_minus &msc SCRL_UP &mmv MOVE_UP     &msc SCRL_DOWN     &td_fslh_bslh &td_lbkt_rbkt &td_rbkt_lbkt &td_bslh_fslh &td_equal_minus &kp UP    &trans    &td_minus_ctrl
 &kp LSHFT  &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB1      &mkp MB2    &mkp MB4    &mkp MB5   &kp LEFT  &kp DOWN  &kp RIGHT &kp RSHFT
-                                            &kp LALT           &none         &kp SPACE    &kp SPACE  &none      &kp RGUI
+                                            &kp LALT           &none         &kp SPACE    &kp SPACE  &none      &kp RALT
             >;
         };
 
