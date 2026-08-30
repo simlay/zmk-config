@@ -8,23 +8,40 @@
     combos {
         compatible = "zmk,combos";
         timeout-ms = <50>; // How fast the keys must be pressed together
-        combo_esc {
+        combo_esc_left {
             timeout-ms = <50>;
             key-positions = <27 28>;
+            bindings = <&kp ESC>;
+        };
+        combo_esc_right {
+            timeout-ms = <50>;
+            key-positions = <31 32>;
             bindings = <&kp ESC>;
         };
 
         // This is your specific combo
         toggle_nav_combo {
             timeout-ms = <50>;
-            key-positions = <39 40>; // Replace with the indices of your two keys
+            key-positions = <38 39>; // Replace with the indices of your two keys
             bindings = <&mo 2>;
+        };
+        toggle_reverse_base_l {
+            timeout-ms = <50>;
+            key-positions = <37 38>; // Replace with the indices of your two keys
+            bindings = <&mo 4>;
+        };
+        toggle_reverse_base_r {
+            timeout-ms = <50>;
+            key-positions = <39 40>; // Replace with the indices of your two keys
+            bindings = <&mo 4>;
         };
         combo_bspc {
             timeout-ms = <50>;
             key-positions = <12 19>;
             bindings = <&kp BSPC>;
         };
+        /*
+        */
         combo_qwerty {
             timeout-ms = <50>;
             key-positions = <13 14 15 16>;
@@ -41,26 +58,16 @@
 &kp TAB    &kp SQT   &kp COMMA  &kp DOT   &kp P     &kp Y        &kp F      &kp G          &kp C     &kp R  &kp L  &kp BSPC
 &kp LCTRL  &kp A     &kp O      &kp E     &kp U     &kp I        &kp D      &kp H          &kp T     &kp N  &kp S  &kp RET
 &kp LSHFT  &kp SEMI  &kp Q      &kp J     &kp K     &kp X        &kp B      &kp M          &kp W     &kp V  &kp Z  &kp RSHFT
-                                &kp LALT  &kp LGUI  &kp SPACE    &kp SPACE  &mo 1          &kp RGUI
+                                &kp LGUI  &mo 1     &kp SPACE    &kp SPACE  &mo 1          &kp RGUI
             >;
         };
-/*
-        reversebase {
-            bindings = <
-&kp BSPC    &kp L   &kp R  &kp C   &kp G     &kp F        &kp Y      &kp P          &kp DOT     &kp COMMA  &kp SQT  &kp TAB
-&kp RET  &kp S     &kp N      &kp T     &kp H     &kp D        &kp I      &kp U          &kp E     &kp O  &kp A  &kp RTCRL
-&kp LSHFT  &kp Z  &kp V      &kp W     &kp M     &kp B        &kp X      &kp K          &kp J     &kp Q  &kp SEMI  &kp RSHFT
-                                &kp LALT  &kp LGUI  &kp SPACE    &kp SPACE  &kp LC(LSHFT)  &kp RGUI
-            >;
-        };
-*/
 
         symbols {
             bindings = <
 &kp GRAVE  &kp N1          &kp N2           &kp N3             &kp N4        &kp N5       &kp N6     &kp N7     &kp N8    &kp N9    &kp N0    &kp BSPC
 &kp LCTRL  &msc SCRL_UP    &mmv MOVE_UP     &msc SCRL_DOWN     &kp FSLH      &kp LBKT     &kp RBKT   &kp BSLH   &kp EQUAL &kp UP    &trans    &kp MINUS
 &kp LSHFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB1      &mkp MB2    &mkp MB4    &mkp MB5   &kp LEFT  &kp DOWN  &kp RIGHT &kp RSHFT
-                                            &kp LALT           &kp LGUI      &kp SPACE    &kp SPACE  &none      &kp RGUI
+                                            &kp LGUI           &trans        &kp SPACE    &kp SPACE  &trans     &kp RGUI
             >;
         };
 
@@ -69,16 +76,34 @@
 &none  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &none  &none    &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_CLR
 &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none    &trans       &kp UP  &trans  &none  &none  &none
 &none  &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none  &none    &kp LEFT     &kp DOWN  &kp RIGHT  &none  &none  &none
-                                       &mkp MB5            &mkp MB4  &mkp MB1 &mkp MB2  &mkp MB3  &tog 0
+                                       &mkp MB5         &trans  &trans  &trans        &mkp MB3  &tog 0
             >;
         };
 
         qwerty {
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E   &kp R     &kp T        &kp Y      &kp U          &kp I     &kp O  &kp P  &kp BSPC
-&kp LCTRL  &kp A  &kp S      &kp D     &kp F     &kp G        &kp H      &kp J          &kp K     &kp L  &kp SEMI &kp RET
-&kp LSHFT  &kp Z  &kp X      &kp C     &kp V     &kp B        &kp N      &kp M          &kp COMMA     &kp DOT  &kp FSLH  &kp RSHFT
+&kp TAB    &kp Q  &kp W  &kp E   &kp R     &kp T        &kp Y      &kp U          &kp I      &kp O    &kp P     &kp BSPC
+&kp LCTRL  &kp A  &kp S  &kp D   &kp F     &kp G        &kp H      &kp J          &kp K      &kp L    &kp SEMI  &kp RET
+&kp LSHFT  &kp Z  &kp X  &kp C   &kp V     &kp B        &kp N      &kp M          &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
                                 &kp LALT  &kp LGUI  &kp SPACE    &kp SPACE  &mo 1          &kp RGUI
+            >;
+        };
+
+        reversebase {
+            bindings = <
+&kp BSPC   &kp L   &kp R  &kp C   &kp G     &kp F        &kp Y      &kp P          &kp DOT     &kp COMMA  &kp SQT   &kp TAB
+&kp RET    &kp S   &kp N  &kp T   &kp H     &kp D        &kp I      &kp U          &kp E       &kp O      &kp A     &kp RTCRL
+&kp LSHFT  &kp Z   &kp V  &kp W   &kp M     &kp B        &kp X      &kp K          &kp J       &kp Q      &kp SEMI  &kp RSHFT
+                                &kp LGUI &trans  &kp SPACE    &kp SPACE  &trans  &kp RGUI
+            >;
+        };
+
+        reverssymbols {
+            bindings = <
+&kp BSPC   &kp N0          &kp N9           &kp N8             &kp N7        &kp N6       &kp N5     &kp N4     &kp N3    &kp N2    &kp N1    &kp GRAVE
+&kp MINUS  &msc SCRL_UP    &mmv MOVE_UP     &kp EQUAL          &kp BSLH      &kp RBKT     &kp LBKT   &kp FSLH   &trans    &kp UP    &trans    &kp LCTRL
+&kp LSHFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB1      &mkp MB2     &mkp MB4   &mkp MB5   &kp LEFT  &kp DOWN  &kp RIGHT &kp RSHFT
+                               &kp LGUI     &trans             &kp SPACE     &kp SPACE    &trans     &kp RGUI
             >;
         };
     };
