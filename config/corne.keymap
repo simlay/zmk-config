@@ -9,11 +9,196 @@
         td_mo1: tap_dance_mo1 { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&mo 1>, <&mo 3>;
-		};
-	};
+        };
+
+        td_tab_bspc: tap_dance_tab_bspc { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&kp BSPC>; };
+        td_sqt_l: tap_dance_sqt_l { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp L>; };
+        td_comma_r: tap_dance_comma_r { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp R>; };
+        td_dot_c: tap_dance_dot_c { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp C>; };
+        td_p_g: tap_dance_p_g { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp P>, <&kp G>; };
+        td_y_f: tap_dance_y_f { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp Y>, <&kp F>; };
+        td_f_y: tap_dance_f_y { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp F>, <&kp Y>; };
+        td_g_p: tap_dance_g_p { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp G>, <&kp P>; };
+        td_c_dot: tap_dance_c_dot { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&kp DOT>; };
+        td_r_comma: tap_dance_r_comma { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp R>, <&kp COMMA>; };
+        td_l_sqt: tap_dance_l_sqt { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp L>, <&kp SQT>; };
+        td_bspc_tab: tap_dance_bspc_tab { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp TAB>; };
+
+        /* --- Left half: home row --- */
+        td_lctrl_ret: tap_dance_lctrl_ret { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL>, <&kp RET>; };
+        td_a_s: tap_dance_a_s { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp S>; };
+        td_o_n: tap_dance_o_n { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp O>, <&kp N>; };
+        td_e_t: tap_dance_e_t { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp E>, <&kp T>; };
+        td_u_h: tap_dance_u_h { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp U>, <&kp H>; };
+        td_i_d: tap_dance_i_d { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp I>, <&kp D>; };
+
+        td_h_u: tap_dance_h_u_r { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp H>, <&kp U>; };
+        td_t_e: tap_dance_t_e_r { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp T>, <&kp E>; };
+        td_n_o: tap_dance_n_o_r { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N>, <&kp O>; };
+        td_s_a: tap_dance_s_a_r { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp S>, <&kp A>; };
+        td_ret_lctrl: tap_dance_ret_lctrl_r { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp RET>, <&kp LCTRL>; };
+        td_d_i: tap_dance_d_i_r { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp D>, <&kp I>; };
+
+        td_fslh_bslh: tap_dance_fslh_bslh { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH>, <&kp BSLH>; };
+        td_bslh_fslh: tap_dance_bslh_fslh { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp BSLH>, <&kp FSLH>; };
+        td_lbkt_rbkt: tap_dance_lbkt_rbkt { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>, <&kp RBKT>; };
+        td_rbkt_lbkt: tap_dance_rbkt_lbkt { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp RBKT>, <&kp LBKT>; };
+        td_equal_minus: tap_dance_equal_minus { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL>, <&kp MINUS>; };
+
+        td_grave_bspc: tap_dance_grave_bspc { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE>, <&kp BSPC>; };
+        td_bscp_grave: tap_dance_bspc_grave { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp GRAVE>; };
+
+        td_minus_ctrl: tap_dance_minus_ctrl { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp LCTRL>; };
+        td_ctrl_minus: tap_dance_ctrl_minus { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL>, <&kp MINUS>; };
+
+        /* --- Bottom row + spacebar area --- */
+        td_lshift_rshift: tap_dance_lshift_rshift { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp LSHFT>, <&kp RSHFT>; };
+        td_semi_z: tap_dance_semi_z { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp SEMI>, <&kp Z>; };
+        td_q_v: tap_dance_q_v { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&kp V>; };
+        td_j_w: tap_dance_j_w { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp J>, <&kp W>; };
+        td_k_m: tap_dance_k_m { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp K>, <&kp M>; };
+        td_x_b: tap_dance_x_b { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp X>, <&kp B>; };
+        td_b_x: tap_dance_b_x { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp B>, <&kp X>; };
+        td_m_k: tap_dance_m_k { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp M>, <&kp K>; };
+        td_w_j: tap_dance_w_j { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp W>, <&kp J>; };
+        td_v_q: tap_dance_v_q { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp V>, <&kp Q>; };
+        td_z_semi: tap_dance_z_semi { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp Z>, <&kp SEMI>; };
+        td_rshift_lshift: tap_dance_rshift_lshift { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp RSHFT>, <&kp LSHFT>; };
+        td_gui_option: tap_dance_lgui_rgui { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI>, <&kp RGUI>; };
+        td_mo1: tap_dance_mo1 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&mo 1>, <&mo 1>, <&mo 1>; };
+        td_space: tap_dance_space { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp SPACE>, <&kp SPACE>; };
+
+        /* --- Number row: symbols layer --- */
+        td_1_0: tap_dance_1_0 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N1>, <&kp N0>; };
+        td_2_9: tap_dance_2_9 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N2>, <&kp N9>; };
+        td_3_8: tap_dance_3_8 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N3>, <&kp N8>; };
+        td_4_7: tap_dance_4_7 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N4>, <&kp N7>; };
+        td_5_6: tap_dance_5_6 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N5>, <&kp N6>; };
+        td_6_5: tap_dance_6_5 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N6>, <&kp N5>; };
+        td_7_4: tap_dance_7_4 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N7>, <&kp N4>; };
+        td_8_3: tap_dance_8_3 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N8>, <&kp N3>; };
+        td_9_2: tap_dance_9_2 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N9>, <&kp N2>; };
+        td_0_1: tap_dance_0_1 { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp N0>, <&kp N1>; };
+    };
     combos {
         compatible = "zmk,combos";
-        jimeout-ms = <50>; // How fast the keys must be pressed together
+        timeout-ms = <50>; // How fast the keys must be pressed together
         combo_esc_left {
             timeout-ms = <50>;
             key-positions = <27 28>;
@@ -41,20 +226,16 @@
             key-positions = <39 40>; // Replace with the indices of your two keys
             bindings = <&mo 2>;
         };
-        /*
         combo_bspc {
             timeout-ms = <50>;
             key-positions = <12 19>;
             bindings = <&kp BSPC>;
         };
-        */
-        /*
         combo_qwerty {
             timeout-ms = <50>;
             key-positions = <13 14 15 16>;
             bindings = <&tog 5>;
         };
-        */
     };
     keymap {
         compatible = "zmk,keymap";
@@ -98,9 +279,9 @@
         navigation {
             bindings = <
 &none  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &none  &none    &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_CLR
-&none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none    &trans       &kp UP  &trans  &none  &none  &none
-&none  &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none  &none    &kp LEFT     &kp DOWN  &kp RIGHT  &none  &none  &none
-                                       &mkp MB5         &trans  &trans  &trans        &mkp MB3  &tog 0
+&none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none    &trans       &kp UP        &trans       &none         &none         &none
+&none  &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none  &none    &kp LEFT     &kp DOWN      &kp RIGHT    &none         &none         &none
+                                       &mkp MB5         &trans  &trans  &trans       &mkp MB3      &trans
             >;
         };
 
@@ -109,8 +290,27 @@
 &kp TAB    &kp Q  &kp W  &kp E   &kp R     &kp T        &kp Y      &kp U          &kp I      &kp O    &kp P     &kp BSPC
 &kp LCTRL  &kp A  &kp S  &kp D   &kp F     &kp G        &kp H      &kp J          &kp K      &kp L    &kp SEMI  &kp RET
 &kp LSHFT  &kp Z  &kp X  &kp C   &kp V     &kp B        &kp N      &kp M          &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                                &kp LALT  &kp LGUI  &kp SPACE    &kp SPACE  &mo 1          &kp RGUI
+                                 &kp LALT  &kp LGUI     &kp SPACE  &kp SPACE     &mo 1       &kp RGUI
             >;
         };
+
+        td_base {
+            bindings = <
+&td_tab_bspc      &td_sqt_l    &td_comma_r   &td_dot_c   &td_p_g     &td_y_f        &td_f_y     &td_g_p     &td_c_dot   &td_r_comma &td_l_sqt   &td_bspc_tab
+&kp LCTRL         &td_a_s      &td_o_n       &td_e_t     &td_u_h     &td_i_d        &td_d_i     &td_h_u     &td_t_e     &td_n_o     &td_s_a     &kp RCTRL
+&kp LSHIFT        &td_semi_z   &td_q_v       &td_j_w     &td_k_m     &td_x_b        &td_b_x     &td_m_k     &td_w_j     &td_v_q     &td_z_semi  &kp RSHIFT
+                               &kp LGUI      &mo 7       &kp SPACE   &kp SPACE      &mo 7     &kp RGUI
+            >;
+        };
+
+        td_symbols {
+            bindings = <
+&td_grave_bspc  &td_1_0        &td_2_9          &td_3_8            &td_4_7       &td_5_6       &td_6_5       &td_7_4       &td_8_3         &td_9_2   &td_0_1   &td_bscp_grave
+&td_ctrl_minus  &msc SCRL_UP   &mmv MOVE_UP     &msc SCRL_DOWN     &td_fslh_bslh &td_lbkt_rbkt &td_rbkt_lbkt &td_bslh_fslh &td_equal_minus &kp UP    &trans    &td_minus_ctrl
+&kp LSHFT       &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB1      &mkp MB2      &mkp MB4      &mkp MB5      &kp LEFT        &kp DOWN  &kp RIGHT &kp RSHFT
+                                                &kp LGUI           &none         &kp SPACE     &kp SPACE     &none         &kp RGUI
+            >;
+        };
+
     };
 };
