@@ -157,12 +157,10 @@
         td_gui_option: tap_dance_lgui_rgui { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp LGUI>, <&kp RGUI>; };
-        td_mo1: tap_dance_mo1 { compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&mo 1>, <&mo 1>, <&mo 1>; };
         td_space: tap_dance_space { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&kp SPACE>, <&kp SPACE>; };
+            tapping-term-ms = <200>;
+            bindings = <&kp SPACE>, <&tog 6>; };
 
         /* --- Number row: symbols layer --- */
         td_1_0: tap_dance_1_0 { compatible = "zmk,behavior-tap-dance";
@@ -195,6 +193,51 @@
         td_0_1: tap_dance_0_1 { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp N0>, <&kp N1>; };
+        td_cycle: tap_dance_cycle {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                bindings = <&to 1>, <&to 2>, <&to 3>, <&to 4>, <&to 5>;
+            };
+        td_to_0: tap_dance_to_0 {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                bindings = <&kp LGUI>, <&to 0>;
+            };
+        td_to_1: tap_dance_to_1 {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                bindings = <&kp LGUI>, <&to 1>;
+            };
+        td_to_2: tap_dance_to_2 {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                bindings = <&kp LGUI>, <&to 2>;
+            };
+        td_to_3: tap_dance_to_3 {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                bindings = <&kp LGUI>, <&to 3>;
+            };
+        td_to_4: tap_dance_to_4 {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                bindings = <&kp LGUI>, <&to 4>;
+            };
+        td_to_5: tap_dance_to_5 {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                bindings = <&kp LGUI>, <&to 5>;
+            };
+        td_to_6: tap_dance_to_6 {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                bindings = <&kp LGUI>, <&to 6>;
+            };
+        td_to_7: tap_dance_to_7 {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                bindings = <&kp LGUI>, <&to 7>;
+            };
     };
     combos {
         compatible = "zmk,combos";
@@ -210,12 +253,20 @@
             bindings = <&kp ESC>;
         };
 
-        // This is your specific combo
+        /*
         toggle_nav_combo {
             timeout-ms = <50>;
             key-positions = <38 39>; // Replace with the indices of your two keys
             bindings = <&mo 4>;
         };
+        */
+        combo_double_space_td {
+            timeout-ms = <50>;
+            key-positions = <38 39>;  // your two keys
+            bindings = <&td_space>;   // triggers the tap dance
+        };
+        /*
+        */
         toggle_reverse_base_l {
             timeout-ms = <50>;
             key-positions = <37 38>; // Replace with the indices of your two keys
@@ -226,26 +277,23 @@
             key-positions = <39 40>; // Replace with the indices of your two keys
             bindings = <&mo 2>;
         };
+        /*
         combo_bspc {
             timeout-ms = <50>;
             key-positions = <12 19>;
             bindings = <&kp BSPC>;
         };
-        combo_qwerty {
-            timeout-ms = <50>;
-            key-positions = <13 14 15 16>;
-            bindings = <&tog 5>;
-        };
+        */
     };
     keymap {
         compatible = "zmk,keymap";
 
         base {
             bindings = <
-&kp TAB    &kp SQT   &kp COMMA  &kp DOT   &kp P     &kp Y        &kp F      &kp G          &kp C     &kp R  &kp L  &kp BSPC
-&kp LCTRL  &kp A     &kp O      &kp E     &kp U     &kp I        &kp D      &kp H          &kp T     &kp N  &kp S  &kp RET
-&kp LSHFT  &kp SEMI  &kp Q      &kp J     &kp K     &kp X        &kp B      &kp M          &kp W     &kp V  &kp Z  &kp RSHFT
-                                &kp LGUI  &td_mo1   &kp SPACE    &kp SPACE  &td_mo1        &kp RGUI
+&kp TAB    &kp SQT   &kp COMMA  &kp DOT       &kp P     &kp Y        &kp F      &kp G          &kp C     &kp R  &kp L  &kp BSPC
+&kp LCTRL  &kp A     &kp O      &kp E         &kp U     &kp I        &kp D      &kp H          &kp T     &kp N  &kp S  &kp RET
+&kp LSHFT  &kp SEMI  &kp Q      &kp J         &kp K     &kp X        &kp B      &kp M          &kp W     &kp V  &kp Z  &kp RSHFT
+                                &td_to_1  &td_mo1   &kp SPACE    &KP SPACE  &td_mo1        &td_to_5
             >;
         };
 
@@ -254,16 +302,16 @@
 &kp GRAVE  &kp N1          &kp N2           &kp N3             &kp N4        &kp N5       &kp N6     &kp N7     &kp N8    &kp N9    &kp N0    &kp BSPC
 &kp LCTRL  &msc SCRL_UP    &mmv MOVE_UP     &msc SCRL_DOWN     &kp FSLH      &kp LBKT     &kp RBKT   &kp BSLH   &kp EQUAL &kp UP    &trans    &kp MINUS
 &kp LSHFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB1      &mkp MB2     &mkp MB4   &mkp MB5   &kp LEFT  &kp DOWN  &kp RIGHT &kp RSHFT
-                                            &kp LGUI           &trans        &kp SPACE    &kp SPACE  &trans     &kp RGUI
+                                            &td_to_2       &trans        &kp SPACE    &kp SPACE  &trans     &td_to_1
             >;
         };
 
         reversebase {
             bindings = <
-&kp BSPC   &kp L   &kp R  &kp C   &kp G     &kp F        &kp Y      &kp P          &kp DOT     &kp COMMA  &kp SQT   &kp TAB
-&kp RET    &kp S   &kp N  &kp T   &kp H     &kp D        &kp I      &kp U          &kp E       &kp O      &kp A     &kp RCTRL
-&kp LSHFT  &kp Z   &kp V  &kp W   &kp M     &kp B        &kp X      &kp K          &kp J       &kp Q      &kp SEMI  &kp RSHFT
-                                  &kp LGUI  &trans      &kp SPACE   &kp SPACE      &trans      &kp RGUI
+&kp BSPC   &kp L   &kp R  &kp C   &kp G        &kp F       &kp Y      &kp P          &kp DOT     &kp COMMA  &kp SQT   &kp TAB
+&kp RET    &kp S   &kp N  &kp T   &kp H        &kp D       &kp I      &kp U          &kp E       &kp O      &kp A     &kp RCTRL
+&kp LSHFT  &kp Z   &kp V  &kp W   &kp M        &kp B       &kp X      &kp K          &kp J       &kp Q      &kp SEMI  &kp RSHFT
+                                  &td_to_3 &trans      &kp SPACE  &kp SPACE      &trans      &td_to_2
             >;
         };
 
@@ -272,25 +320,25 @@
 &kp BSPC   &kp N0          &kp N9           &kp N8             &kp N7        &kp N6       &kp N5     &kp N4     &kp N3    &kp N2    &kp N1    &kp GRAVE
 &kp MINUS  &msc SCRL_UP    &mmv MOVE_UP     &kp EQUAL          &kp BSLH      &kp RBKT     &kp LBKT   &kp FSLH   &trans    &kp UP    &trans    &kp LCTRL
 &kp LSHFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB1      &mkp MB2     &mkp MB4   &mkp MB5   &kp LEFT  &kp DOWN  &kp RIGHT &kp RSHFT
-                               &kp LGUI     &trans             &kp SPACE     &kp SPACE    &trans     &kp RGUI
+                           &td_to_4         &trans             &kp SPACE     &kp SPACE    &trans     &td_to_3
             >;
         };
 
         navigation {
             bindings = <
-&none  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &none  &none    &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_CLR
-&none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none    &trans       &kp UP        &trans       &none         &none         &none
-&none  &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none  &none    &kp LEFT     &kp DOWN      &kp RIGHT    &none         &none         &none
-                                       &mkp MB5         &trans  &trans  &trans       &mkp MB3      &trans
+&none  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &none              &none         &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_CLR
+&none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none              &none         &trans       &kp UP        &trans       &none         &none         &none
+&none  &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none              &none         &kp LEFT     &kp DOWN      &kp RIGHT    &none         &none         &none
+                                       &td_to_5         &trans             &kp SPACE     &kp SPACE    &trans     &td_to_4
             >;
         };
 
         qwerty {
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E   &kp R     &kp T        &kp Y      &kp U          &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D   &kp F     &kp G        &kp H      &kp J          &kp K      &kp L    &kp SEMI  &kp RET
-&kp LSHFT  &kp Z  &kp X  &kp C   &kp V     &kp B        &kp N      &kp M          &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                                 &kp LALT  &kp LGUI     &kp SPACE  &kp SPACE     &mo 1       &kp RGUI
+&kp TAB    &kp Q  &kp W  &kp E   &kp R         &kp T        &kp Y      &kp U         &kp I      &kp O    &kp P     &kp BSPC
+&kp LCTRL  &kp A  &kp S  &kp D   &kp F         &kp G        &kp H      &kp J         &kp K      &kp L    &kp SEMI  &kp RET
+&kp LSHFT  &kp Z  &kp X  &kp C   &kp V         &kp B        &kp N      &kp M         &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                                 &td_to_6  &trans      &kp SPACE  &KP SPACE      &trans     &td_to_4
             >;
         };
 
@@ -299,7 +347,7 @@
 &td_tab_bspc      &td_sqt_l    &td_comma_r   &td_dot_c   &td_p_g     &td_y_f        &td_f_y     &td_g_p     &td_c_dot   &td_r_comma &td_l_sqt   &td_bspc_tab
 &kp LCTRL         &td_a_s      &td_o_n       &td_e_t     &td_u_h     &td_i_d        &td_d_i     &td_h_u     &td_t_e     &td_n_o     &td_s_a     &kp RCTRL
 &kp LSHIFT        &td_semi_z   &td_q_v       &td_j_w     &td_k_m     &td_x_b        &td_b_x     &td_m_k     &td_w_j     &td_v_q     &td_z_semi  &kp RSHIFT
-                               &kp LGUI      &mo 7       &kp SPACE   &kp SPACE      &mo 7     &kp RGUI
+                               &td_to_7  &mo 7       &kp SPACE   &KP SPACE      &mo 7     &td_to_5
             >;
         };
 
@@ -308,7 +356,7 @@
 &td_grave_bspc  &td_1_0        &td_2_9          &td_3_8            &td_4_7       &td_5_6       &td_6_5       &td_7_4       &td_8_3         &td_9_2   &td_0_1   &td_bscp_grave
 &td_ctrl_minus  &msc SCRL_UP   &mmv MOVE_UP     &msc SCRL_DOWN     &td_fslh_bslh &td_lbkt_rbkt &td_rbkt_lbkt &td_bslh_fslh &td_equal_minus &kp UP    &trans    &td_minus_ctrl
 &kp LSHFT       &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB1      &mkp MB2      &mkp MB4      &mkp MB5      &kp LEFT        &kp DOWN  &kp RIGHT &kp RSHFT
-                                                &kp LGUI           &none         &kp SPACE     &kp SPACE     &none         &kp RGUI
+                                                &td_to_6       &mo 6         &kp SPACE     &KP SPACE     &mo 6     &td_to_0
             >;
         };
 
