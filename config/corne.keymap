@@ -293,7 +293,7 @@
 &kp TAB    &kp SQT   &kp COMMA  &kp DOT       &kp P     &kp Y        &kp F      &kp G          &kp C     &kp R  &kp L  &kp BSPC
 &kp LCTRL  &kp A     &kp O      &kp E         &kp U     &kp I        &kp D      &kp H          &kp T     &kp N  &kp S  &kp RET
 &kp LSHFT  &kp SEMI  &kp Q      &kp J         &kp K     &kp X        &kp B      &kp M          &kp W     &kp V  &kp Z  &kp RSHFT
-                                &td_to_1  &td_mo1   &kp SPACE    &kp SPACE  &td_mo1        &td_to_5
+                                &td_to_1  &td_mo1   &kp SPACE    &kp SPACE  &td_mo1        &td_to_7
             >;
         };
 
@@ -302,7 +302,7 @@
 &kp GRAVE  &kp N1          &kp N2           &kp N3             &kp N4        &kp N5       &kp N6     &kp N7     &kp N8    &kp N9    &kp N0    &kp BSPC
 &kp LCTRL  &msc SCRL_UP    &mmv MOVE_UP     &msc SCRL_DOWN     &kp FSLH      &kp LBKT     &kp RBKT   &kp BSLH   &kp EQUAL &kp UP    &trans    &kp MINUS
 &kp LSHFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB1      &mkp MB2     &mkp MB4   &mkp MB5   &kp LEFT  &kp DOWN  &kp RIGHT &kp RSHFT
-                                            &td_to_2       &trans        &kp SPACE    &kp SPACE  &trans     &td_to_1
+                                            &td_to_2       &trans        &kp SPACE    &kp SPACE  &trans     &td_to_0
             >;
         };
 
@@ -311,7 +311,7 @@
 &kp BSPC   &kp L   &kp R  &kp C   &kp G        &kp F       &kp Y      &kp P          &kp DOT     &kp COMMA  &kp SQT   &kp TAB
 &kp RET    &kp S   &kp N  &kp T   &kp H        &kp D       &kp I      &kp U          &kp E       &kp O      &kp A     &kp RCTRL
 &kp LSHFT  &kp Z   &kp V  &kp W   &kp M        &kp B       &kp X      &kp K          &kp J       &kp Q      &kp SEMI  &kp RSHFT
-                                  &td_to_3 &trans      &kp SPACE  &kp SPACE      &trans      &td_to_2
+                                  &td_to_3 &trans      &kp SPACE  &kp SPACE      &trans      &td_to_1
             >;
         };
 
@@ -320,7 +320,7 @@
 &kp BSPC   &kp N0          &kp N9           &kp N8             &kp N7        &kp N6       &kp N5     &kp N4     &kp N3    &kp N2    &kp N1    &kp GRAVE
 &kp MINUS  &msc SCRL_UP    &mmv MOVE_UP     &kp EQUAL          &kp BSLH      &kp RBKT     &kp LBKT   &kp FSLH   &trans    &kp UP    &trans    &kp LCTRL
 &kp LSHFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB1      &mkp MB2     &mkp MB4   &mkp MB5   &kp LEFT  &kp DOWN  &kp RIGHT &kp RSHFT
-                           &td_to_4         &trans             &kp SPACE     &kp SPACE    &trans     &td_to_3
+                           &td_to_4         &trans             &kp SPACE     &kp SPACE    &trans     &td_to_2
             >;
         };
 
@@ -329,7 +329,7 @@
 &none  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &none              &none         &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_CLR
 &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none              &none         &trans       &kp UP        &trans       &none         &none         &none
 &none  &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none              &none         &kp LEFT     &kp DOWN      &kp RIGHT    &none         &none         &none
-                                       &td_to_5         &trans             &kp SPACE     &kp SPACE    &trans     &td_to_4
+                                       &td_to_5         &trans             &kp SPACE     &kp SPACE    &trans     &td_to_3
             >;
         };
 
