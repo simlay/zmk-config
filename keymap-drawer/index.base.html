@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Corne Layout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="toolbar">
+    <button onclick="showLayer('base')" class="active">base</button>
+    <button onclick="showLayer('symbols')">symbols</button>
+    <button onclick="showLayer('reversebase')">reversebase</button>
+    <button onclick="showLayer('reverssymbols')">reverssymbols</button>
+    <button onclick="showLayer('qwerty')">qwerty</button>
+    <button onclick="showLayer('td_base')">td_base</button>
+    <button onclick="showLayer('td_symbols')">td_symbols</button>
+    <button onclick="showLayer('navigation')">navigation</button>
+  </div>
+
+  <div id="keyboard">
+SVG_PLACEHOLDER
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
