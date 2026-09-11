@@ -295,13 +295,13 @@
     keymap {
         compatible = "zmk,keymap";
 
-        #include <layers/base.dtsi>
-        #include <layers/symbols.dtsi>
-        #include <layers/reversebase.dtsi>
-        #include <layers/reverssymbols.dtsi>
-        #include <layers/qwerty.dtsi>
-        #include <layers/td_base.dtsi>
-        #include <layers/td_symbols.dtsi>
-        #include <layers/navigation.dtsi>
+        #include "layers/base.dtsi"
+        #include "layers/symbols.dtsi"
+        #include "layers/reversebase.dtsi"
+        #include "layers/reverssymbols.dtsi"
+        #include "layers/qwerty.dtsi"
+        #include "layers/td_base.dtsi"
+        #include "layers/td_symbols.dtsi"
+        #include "layers/navigation.dtsi"
     };
 };
