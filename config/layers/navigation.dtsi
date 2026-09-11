@@ -1,0 +1,8 @@
+navigation {
+    bindings = <
+&none  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &none              &none         &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_CLR
+&none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none              &none         &trans       &kp UP        &trans       &none         &none         &none
+&none  &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none              &none         &kp LEFT     &kp DOWN      &kp RIGHT    &none         &none         &none
+                                       &td_to_0         &trans             &kp SPACE     &kp SPACE    &trans     &td_to_0
+    >;
+};
