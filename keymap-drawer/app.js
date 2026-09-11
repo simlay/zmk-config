@@ -1,19 +1,46 @@
+function findKeysByLabel(label) {
+  return Array.from(document.querySelectorAll('.key'))
+    .filter(key => key.querySelector('text.tap')?.textContent === label)
+    .map(key => key.querySelector('rect.key'));
+}
+
 function updateKeys(e, fill) {
-  if (e.ctrlKey || e.altKey || e.metaKey) return;
   const key = e.key;
 
-  if (key === undefined || key.length > 1) return;
+  // Special keys (strings = direct labels, functions = compute from e)
+  const specialKeyMap = {
+    ' ': 'SPACE',
+    'Backspace': 'BSPC',
+    'Tab': 'TAB',
+    'Enter': 'RET',
+    'Escape': 'ESC',
+    'ArrowLeft': 'LEFT',
+    'ArrowUp': 'UP',
+    'ArrowDown': 'DOWN',
+    'ArrowRight': 'RIGHT',
+    'Control': (e) => `${e.code.includes('Left') ? 'L' : 'R'}CTRL`,
+    'Shift': (e) => `${e.code.includes('Left') ? 'L' : 'R'}SHFT`,
+    'Meta': (e) => `${e.code.includes('Left') ? 'L' : 'R'}GUI`
+  };
+
+  if (specialKeyMap[key]) {
+    const label = typeof specialKeyMap[key] === 'function'
+      ? specialKeyMap[key](e)
+      : specialKeyMap[key];
+    findKeysByLabel(label).forEach(rect => {
+      rect.style.fill = fill;
+    });
+    return;
+  }
+
+  if (key === undefined) return;
 
   let label = key;
   if (key.length === 1) {
     label = key.toUpperCase();
   }
 
-  const rects = Array.from(document.querySelectorAll('.key'))
-    .filter(key => key.querySelector('text.tap')?.textContent === label)
-    .map(key => key.querySelector('rect.key'));
-
-  rects.forEach(rect => {
+  findKeysByLabel(label).forEach(rect => {
     rect.style.fill = fill;
   });
 }
