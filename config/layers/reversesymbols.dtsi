@@ -5,4 +5,4 @@ reversesymbols {
     &kp MINUS    &kp EQUAL    &kp PIPE    &kp BSLH    &kp RIGHT_BRACE    &kp RBKT     &kp LBKT       &kp LEFT_BRACE    &kp FSLH    &kp QUESTION    &kp PLUS    &kp UNDERSCORE
                                                     &td_to_4         &trans             &kp SPACE     &kp SPACE    &trans     &td_to_2
     >;
-}
+};
