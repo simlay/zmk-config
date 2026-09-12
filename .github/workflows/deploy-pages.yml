@@ -25,7 +25,7 @@ jobs:
       - name: Download keymap-drawer output
         uses: actions/download-artifact@v4
         with:
-          name: keymap-drawer-output
+          name: drawings
           path: keymap-drawer
 
       - name: Build interactive
