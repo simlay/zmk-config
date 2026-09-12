@@ -15,16 +15,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
         with:
-          python-version: '3.12'
+          keymap_patterns: 'config/*.keymap'
+          destination: local
+          output_folder: keymap-drawer
 
-      - name: Install keymap-drawer
-        run: pipx install keymap-drawer
-
-      - name: Build interactive keymap
-        run: make render
+      - name: Build interactive
+        run: ./build-interactive.sh
 
       - name: Deploy to gh-pages
         run: |
@@ -37,5 +35,5 @@ jobs:
           git rm -r --cached .
           git reset
           git add keymap-drawer/ index.html
-          git commit -m "Deploy keymap"
+          git commit --allow-empty -m "Deploy keymap"
           git push origin gh-pages --force
