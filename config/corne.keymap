@@ -165,7 +165,6 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp SPACE>, <&tog 6>; };
-
         /* --- Number row: symbols layer --- */
         td_1_0: tap_dance_1_0 { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -256,7 +255,6 @@
             key-positions = <31 32>;
             bindings = <&kp ESC>;
         };
-
         toggle_nav_combo {
             timeout-ms = <50>;
             key-positions = <38 39>; // Replace with the indices of your two keys
@@ -284,13 +282,11 @@
             key-positions = <12 19>;
             bindings = <&kp BSPC>;
         };
-        /*
         combo_base {
             timeout-ms = <50>;
             key-positions = <13 14 15 16>;
             bindings = <&to 0>;
         };
-        */
     };
     keymap {
         compatible = "zmk,keymap";
