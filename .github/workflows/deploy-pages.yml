@@ -6,7 +6,14 @@ on:
   workflow_dispatch:
 
 jobs:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    with:
+      keymap_patterns: 'config/*.keymap'
+      destination: artifact
+
   deploy:
+    needs: draw
     runs-on: ubuntu-24.04
     permissions:
       contents: write
@@ -15,11 +22,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+      - name: Download keymap-drawer output
+        uses: actions/download-artifact@v4
         with:
-          keymap_patterns: 'config/*.keymap'
-          destination: local
-          output_folder: keymap-drawer
+          name: keymap-drawer-output
+          path: keymap-drawer
 
       - name: Build interactive
         run: ./build-interactive.sh
