@@ -1,0 +1,46 @@
+name: Deploy keymap to GitHub Pages
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    with:
+      keymap_patterns: 'config/*.keymap'
+      destination: artifact
+
+  deploy:
+    needs: draw
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Download keymap-drawer output
+        uses: actions/download-artifact@v4
+        with:
+          name: drawings
+          path: keymap-drawer
+
+      - name: Build interactive
+        run: ./build-interactive.sh
+
+      - name: Deploy to gh-pages
+        run: |
+          git config --global user.email "sebastian.imlay@gmail.com"
+          git config --global user.name "Sebastian Imlay"
+          git checkout --orphan gh-pages
+          echo '<meta http-equiv="refresh" content="0; url=keymap-drawer/index.html"><a href="keymap-drawer/index.html">Redirect</a>' > index.html
+          git add index.html
+          git add --force keymap-drawer/
+          git rm -r --cached .
+          git reset
+          git add keymap-drawer/ index.html
+          git commit --allow-empty -m "Deploy keymap"
+          git push origin gh-pages --force

@@ -4,14 +4,3 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
-
-  draw:
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
-    with:
-      keymap_patterns: 'config/*.keymap'
-      destination: artifact
-      #config_path: keymap-drawer/config.yaml
-      #output_folder: keymap-drawer
-      #install_branch: main
-      #amend_commit: true
-      #json_path: keymap-drawer/layouts
