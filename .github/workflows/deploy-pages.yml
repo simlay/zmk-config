@@ -2,7 +2,7 @@ name: Deploy keymap to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - non-mirrored-tapdance
   workflow_dispatch:
 
 jobs:
