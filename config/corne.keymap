@@ -107,6 +107,7 @@
             #binding-cells = <0>;
             bindings = <&kp EQUAL>, <&kp MINUS>; };
 
+            /*
         td_grave_bspc: tap_dance_grave_bspc { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp GRAVE>, <&kp BSPC>; };
@@ -121,10 +122,10 @@
             #binding-cells = <0>;
             bindings = <&kp LCTRL>, <&kp MINUS>; };
 
-        /* --- Bottom row + spacebar area --- */
         td_lshift_rshift: tap_dance_lshift_rshift { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp LSHFT>, <&kp RSHFT>; };
+			*/
         td_semi_z: tap_dance_semi_z { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp SEMI>, <&kp Z>; };
@@ -196,11 +197,63 @@
         td_0_1: tap_dance_0_1 { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&kp N0>, <&kp N1>; };
-        td_cycle: tap_dance_cycle {
-                compatible = "zmk,behavior-tap-dance";
-                #binding-cells = <0>;
-                bindings = <&to 1>, <&to 2>, <&to 3>, <&to 4>, <&to 5>;
-            };
+        td_grave_tilde: tap_dance_grave_tilde { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE>, <&kp TILDE>; };
+        td_tilde_grave: tap_dance_tilde_grave { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp TILDE>, <&kp GRAVE>; };
+        td_excl_rpar: tap_dance_excl_rpar { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp EXCL>, <&kp RPAR>; };
+        td_rpar_excl: tap_dance_rpar_excl { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp RPAR>, <&kp EXCL>; };
+        td_at_lpar: tap_dance_at_lpar { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp AT>, <&kp LPAR>; };
+        td_lpar_at: tap_dance_lpar_at { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp AT>; };
+        td_hash_star: tap_dance_hash_star { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp HASH>, <&kp STAR>; };
+        td_star_hash: tap_dance_star_hash { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp STAR>, <&kp HASH>; };
+        td_dollar_amps: tap_dance_dollar_amps { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp DOLLAR>, <&kp AMPS>; };
+        td_amps_dollar: tap_dance_amps_dollar { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp AMPS>, <&kp DOLLAR>; };
+        td_percent_caret: tap_dance_percent_caret { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp PERCENT>, <&kp CARET>; };
+        td_caret_percent: tap_dance_caret_percent { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp CARET>, <&kp PERCENT>; };
+        td_underscore_minus: tap_dance_underscore_minus { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp UNDERSCORE>, <&kp MINUS>; };
+        td_minus_underscore: tap_dance_minus_underscore { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp UNDERSCORE>; };
+        td_plus_equal: tap_dance_plus_equal { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp PLUS>, <&kp EQUAL>; };
+        td_equal_plus: tap_dance_equal_plus { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL>, <&kp PLUS>; };
+        td_question_pipe: tap_dance_question_pipe { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp QUESTION>, <&kp PIPE>; };
+        td_pipe_question: tap_dance_pipe_question { compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp PIPE>, <&kp QUESTION>; };
+
+
+        // These are just helpers to increment/decrement the layers.
         td_to_0: tap_dance_to_0 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
@@ -258,7 +311,7 @@
         toggle_nav_combo {
             timeout-ms = <50>;
             key-positions = <38 39>; // Replace with the indices of your two keys
-            bindings = <&mo 6>;
+            bindings = <&mo 7>;
         };
         /*
         combo_double_space_td {
