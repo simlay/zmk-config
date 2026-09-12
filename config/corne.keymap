@@ -260,7 +260,7 @@
         toggle_nav_combo {
             timeout-ms = <50>;
             key-positions = <38 39>; // Replace with the indices of your two keys
-            bindings = <&mo 7>;
+            bindings = <&mo 6>;
         };
         /*
         combo_double_space_td {
@@ -297,9 +297,11 @@
 
         #include "layers/base.dtsi"
         #include "layers/symbols.dtsi"
+
         #include "layers/reversebase.dtsi"
-        #include "layers/reverssymbols.dtsi"
+        #include "layers/reversesymbols.dtsi"
         #include "layers/qwerty.dtsi"
+
         #include "layers/td_base.dtsi"
         #include "layers/td_symbols.dtsi"
         #include "layers/navigation.dtsi"

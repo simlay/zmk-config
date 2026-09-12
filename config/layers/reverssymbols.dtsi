@@ -1,8 +1,0 @@
-reverssymbols {
-    bindings = <
-&kp BSPC   &kp N0          &kp N9           &kp N8             &kp N7        &kp N6       &kp N5     &kp N4     &kp N3    &kp N2    &kp N1    &kp GRAVE
-&kp MINUS  &msc SCRL_UP    &mmv MOVE_UP     &kp EQUAL          &kp BSLH      &kp RBKT     &kp LBKT   &kp FSLH   &trans    &kp UP    &trans    &kp LCTRL
-&kp LSHFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB1      &mkp MB2     &mkp MB4   &mkp MB5   &kp LEFT  &kp DOWN  &kp RIGHT &kp RSHFT
-                           &td_to_4         &trans             &kp SPACE     &kp SPACE    &trans     &td_to_2
-    >;
-};
