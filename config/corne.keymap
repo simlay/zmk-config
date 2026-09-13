@@ -6,7 +6,7 @@
 #define DEFAULT 0
 #define LOWER   1
 #define RAISE   2
-#define TD_TAPPING_TERM 10
+#define TD_TAPPING_TERM 150
 
 
 / {
