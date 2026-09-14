@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 0
 
       - name: Download keymap-drawer output
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: drawings
           path: keymap-drawer
