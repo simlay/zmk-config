@@ -1,0 +1,280 @@
+layout: {zmk_keyboard: corne}
+layers:
+  base: [TAB, '''', ',', ., P, Y, F, G, C, R, L, BSPC, LCTRL, A, O, E, U, I, D, H, T, N, S, RET, LSHFT, ;, Q, J, K, X, B, M, W, V, Z, RSHFT, '&td_to_1', '&td_mo1',
+    BSPC, SPACE, '&td_mo1', '&td_to_6']
+  symbols:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '~'
+  - LCTRL
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
+  - RCTRL
+  - _
+  - +
+  - '?'
+  - /
+  - '{'
+  - '['
+  - ']'
+  - '}'
+  - \
+  - '|'
+  - '='
+  - '-'
+  - '&td_to_2'
+  - {t: ▽, type: trans}
+  - SPACE
+  - SPACE
+  - {t: ▽, type: trans}
+  - '&td_to_0'
+  reversebase:
+  - BSPC
+  - L
+  - R
+  - C
+  - G
+  - F
+  - Y
+  - P
+  - .
+  - ','
+  - ''''
+  - TAB
+  - RET
+  - S
+  - N
+  - T
+  - H
+  - D
+  - I
+  - U
+  - E
+  - O
+  - A
+  - RCTRL
+  - LSHFT
+  - Z
+  - V
+  - W
+  - M
+  - B
+  - X
+  - K
+  - J
+  - Q
+  - ;
+  - RSHFT
+  - '&td_to_3'
+  - {type: held}
+  - {t: SPACE, type: held}
+  - BSPC
+  - {t: ▽, type: trans}
+  - '&td_to_1'
+  reversesymbols:
+  - '~'
+  - '0'
+  - '9'
+  - '8'
+  - '7'
+  - '6'
+  - '5'
+  - '4'
+  - '3'
+  - '2'
+  - '1'
+  - '`'
+  - RCTRL
+  - )
+  - (
+  - '*'
+  - '&'
+  - ^
+  - '%'
+  - $
+  - '#'
+  - '@'
+  - '!'
+  - LCTRL
+  - '-'
+  - '='
+  - '|'
+  - \
+  - '}'
+  - ']'
+  - '['
+  - '{'
+  - /
+  - '?'
+  - +
+  - _
+  - '&td_to_4'
+  - {t: ▽, type: trans}
+  - SPACE
+  - SPACE
+  - {t: ▽, type: trans}
+  - '&td_to_2'
+  qwerty:
+  - TAB
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - BSPC
+  - LCTRL
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - RET
+  - LSHFT
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - RSHFT
+  - '&td_to_5'
+  - {t: ▽, type: trans}
+  - SPACE
+  - SPACE
+  - {t: ▽, type: trans}
+  - '&td_to_3'
+  td_base: [TAB, '&td_sqt_l', '&td_comma_r', '&td_dot_c', '&td_p_g', '&td_y_f', '&td_f_y', '&td_g_p', '&td_c_dot', '&td_r_comma', '&td_l_sqt', BSPC, LCTRL, '&td_a_s',
+    '&td_o_n', '&td_e_t', '&td_u_h', '&td_i_d', '&td_d_i', '&td_h_u', '&td_t_e', '&td_n_o', '&td_s_a', RET, LSHIFT, '&td_semi_z', '&td_q_v', '&td_j_w', '&td_k_m',
+    '&td_x_b', '&td_b_x', '&td_m_k', '&td_w_j', '&td_v_q', '&td_z_semi', RSHIFT, '&td_to_6', td_symbols, BSPC, SPACE, td_symbols, '&td_to_4']
+  td_symbols:
+  - '&td_grave_tilde'
+  - '&td_1_0'
+  - '&td_2_9'
+  - '&td_3_8'
+  - '&td_4_7'
+  - '&td_5_6'
+  - '&td_6_5'
+  - '&td_7_4'
+  - '&td_8_3'
+  - '&td_9_2'
+  - '&td_0_1'
+  - '&td_tilde_grave'
+  - LCTRL
+  - '&td_excl_rpar'
+  - '&td_at_lpar'
+  - '&td_hash_star'
+  - '&td_dollar_amps'
+  - '&td_percent_caret'
+  - '&td_caret_percent'
+  - '&td_amps_dollar'
+  - '&td_star_hash'
+  - '&td_lpar_at'
+  - '&td_rpar_excl'
+  - RCTRL
+  - '&td_underscore_minus'
+  - '&td_plus_equal'
+  - '&td_question_pipe'
+  - '&td_fslh_bslh'
+  - '&td_lbkt_rbkt'
+  - '&td_lbkt_rbkt'
+  - '&td_rbkt_lbkt'
+  - '&td_rbkt_lbkt'
+  - '&td_bslh_fslh'
+  - '&td_pipe_question'
+  - '&td_equal_plus'
+  - '&td_minus_underscore'
+  - '&td_to_0'
+  - {t: td_base, type: held}
+  - SPACE
+  - SPACE
+  - td_base
+  - '&td_to_5'
+  navigation:
+  - ''
+  - '&msc SCRL_UP'
+  - '&mmv MOVE_UP'
+  - '&msc SCRL_DOWN'
+  - ''
+  - ''
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - {t: BT, h: '5'}
+  - BT CLR
+  - ''
+  - '&mmv MOVE_LEFT'
+  - '&mmv MOVE_DOWN'
+  - '&mmv MOVE_RIGHT'
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - UP
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&msc SCRL_LEFT'
+  - ''
+  - '&msc SCRL_RIGHT'
+  - ''
+  - ''
+  - LEFT
+  - DOWN
+  - RIGHT
+  - ''
+  - ''
+  - ''
+  - '&td_to_0'
+  - {t: ▽, type: trans}
+  - {t: SPACE, type: held}
+  - {t: SPACE, type: held}
+  - {t: ▽, type: trans}
+  - '&td_to_0'
+combos:
+- p: [27, 28]
+  k: ESC
+- p: [31, 32]
+  k: ESC
+- p: [38, 39]
+  k: navigation
+- p: [37, 38]
+  k: reversebase
+- p: [39, 40]
+  k: reversebase
+- p: [12, 19]
+  k: BSPC
+- p: [13, 14, 15, 16]
+  k: {t: base, h: toggle}
