@@ -3,6 +3,6 @@ td_symbols {
 &td_grave_tilde      &td_1_0        &td_2_9           &td_3_8            &td_4_7           &td_5_6           &td_6_5           &td_7_4          &td_8_3        &td_9_2           &td_0_1        &td_tilde_grave
 &kp LCTRL            &td_excl_rpar  &td_at_lpar       &td_hash_star      &td_dollar_amps   &td_percent_caret &td_caret_percent &td_amps_dollar  &td_star_hash  &td_lpar_at       &td_rpar_excl  &kp RCTRL
 &td_underscore_minus &td_plus_equal &td_question_pipe &td_fslh_bslh      &td_lbkt_rbkt     &td_lbkt_rbkt     &td_rbkt_lbkt     &td_rbkt_lbkt    &td_bslh_fslh  &td_pipe_question &td_equal_plus &td_minus_underscore
-                                                &td_to_0           &mo 5         &kp SPACE     &kp SPACE     &mo 5         &td_to_5
+                                                                         &none             &trans            &kp SPACE         &kp SPACE        &trans         &none
     >;
 };

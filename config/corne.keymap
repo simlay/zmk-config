@@ -18,6 +18,7 @@
 
         td_tab_bspc: tap_dance_tab_bspc { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
+            tapping-term-ms = <TD_TAPPING_TERM>;
             bindings = <&kp TAB>, <&kp BSPC>; };
         td_sqt_l: tap_dance_sqt_l { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -61,6 +62,7 @@
             bindings = <&kp L>, <&kp SQT>; };
         td_bspc_tab: tap_dance_bspc_tab { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
+            tapping-term-ms = <TD_TAPPING_TERM>;
             bindings = <&kp BSPC>, <&kp TAB>; };
 
         /* --- Left half: home row --- */
@@ -106,6 +108,7 @@
             bindings = <&kp S>, <&kp A>; };
         td_ret_lctrl: tap_dance_ret_lctrl_r { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
+            tapping-term-ms = <TD_TAPPING_TERM>;
             bindings = <&kp RET>, <&kp LCTRL>; };
         td_d_i: tap_dance_d_i_r { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -193,13 +196,15 @@
             bindings = <&kp Z>, <&kp SEMI>; };
         td_rshift_lshift: tap_dance_rshift_lshift { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
+            tapping-term-ms = <TD_TAPPING_TERM>;
             bindings = <&kp RSHFT>, <&kp LSHFT>; };
         td_gui_option: tap_dance_lgui_rgui { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
+            tapping-term-ms = <TD_TAPPING_TERM>;
             bindings = <&kp LGUI>, <&kp RGUI>; };
         td_space: tap_dance_space { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <TD_TAPPING_TERM>;
             bindings = <&kp SPACE>, <&tog 6>; };
         /* --- Number row: symbols layer --- */
         td_1_0: tap_dance_1_0 { compatible = "zmk,behavior-tap-dance";
@@ -410,8 +415,8 @@
         #include "layers/base.dtsi"
         #include "layers/symbols.dtsi"
 
-        #include "layers/reversebase.dtsi"
-        #include "layers/reversesymbols.dtsi"
+        #include "layers/reverse_base.dtsi"
+        #include "layers/reverse_symbols.dtsi"
         #include "layers/qwerty.dtsi"
 
         #include "layers/td_base.dtsi"

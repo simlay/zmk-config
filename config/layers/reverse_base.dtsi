@@ -1,8 +1,8 @@
-reversebase {
+reverse_base {
     bindings = <
 &kp BSPC   &kp L   &kp R  &kp C   &kp G        &kp F       &kp Y      &kp P          &kp DOT     &kp COMMA  &kp SQT   &kp TAB
 &kp RET    &kp S   &kp N  &kp T   &kp H        &kp D       &kp I      &kp U          &kp E       &kp O      &kp A     &kp RCTRL
 &kp LSHFT  &kp Z   &kp V  &kp W   &kp M        &kp B       &kp X      &kp K          &kp J       &kp Q      &kp SEMI  &kp RSHFT
-                                  &td_to_3     &trans      &kp SPACE  &kp BSPC      &trans      &td_to_1
+                                  &none        &trans      &kp SPACE  &kp BSPC       &trans      &none
     >;
 };
