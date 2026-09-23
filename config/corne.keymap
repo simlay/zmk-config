@@ -13,7 +13,7 @@
     behaviors {
         td_mo1: tap_dance_mo1 { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&mo 1>, <&mo 3>;
+            bindings = <&mo 1>, <&mo 2>;
         };
 
         td_tab_bspc: tap_dance_tab_bspc { compatible = "zmk,behavior-tap-dance";
@@ -415,8 +415,8 @@
         #include "layers/base.dtsi"
         #include "layers/symbols.dtsi"
 
-        #include "layers/reverse_base.dtsi"
-        #include "layers/reverse_symbols.dtsi"
+        #include "layers/r_base.dtsi"
+        #include "layers/r_symbols.dtsi"
         #include "layers/qwerty.dtsi"
 
         #include "layers/td_base.dtsi"
