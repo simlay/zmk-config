@@ -3,6 +3,6 @@ symbols {
 &kp GRAVE       &kp N1          &kp N2           &kp N3             &kp N4          &kp N5       &kp N6     &kp N7          &kp N8    &kp N9    &kp N0    &kp TILDE
 &kp UNDERSCORE  &kp EXCL        &kp AT           &kp HASH           &kp DOLLAR      &kp PERCENT  &kp CARET  &kp AMPS        &kp STAR  &kp LPAR  &kp RPAR  &kp MINUS
 &mo 3           &kp PLUS        &kp QUESTION     &kp FSLH           &kp LEFT_BRACE  &kp LBKT     &kp RBKT   &kp RIGHT_BRACE &kp BSLH  &kp PIPE  &kp EQUAL &mo 3
-                                                 &kp LGUI           &trans          &kp SPACE    &kp SPACE  &trans          &kp RGUI
+                                                 &kp LGUI           &trans          &mo 2        &mo 2      &trans          &kp RGUI
     >;
 };
