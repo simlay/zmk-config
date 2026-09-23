@@ -5,3 +5,9 @@ render:
 
 watch:
 	watchexec -w ./config/ 'make render'
+
+
+get-firmware:
+	mkdir -p firmware/
+	rm firmware/corne_right-nice_nano_v2-zmk.uf2 firmware/corne_left-nice_nano_v2-zmk.uf2
+	gh run download $(shell gh run list --workflow 'Build ZMK firmware' -b main -L 1 -s completed  --json 'databaseId' --jq '.[].databaseId')
