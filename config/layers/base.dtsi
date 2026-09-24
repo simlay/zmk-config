@@ -3,6 +3,6 @@ base {
 &kp TAB    &kp SQT   &kp COMMA  &kp DOT       &kp P     &kp Y        &kp F      &kp G          &kp C     &kp R  &kp L  &kp BSPC
 &kp LCTRL  &kp A     &kp O      &kp E         &kp U     &kp I        &kp D      &kp H          &kp T     &kp N  &kp S  &kp RET
 &kp LSHFT  &kp SEMI  &kp Q      &kp J         &kp K     &kp X        &kp B      &kp M          &kp W     &kp V  &kp Z  &kp RSHFT
-                                &td_to_4      &td_mo1   &kp BSPC    &kp SPACE  &td_mo1        &td_to_6
+                                &td_to_4      &mo_1_2   &kp BSPC    &kp SPACE  &mo_1_2        &td_to_6
     >;
 };

@@ -1,0 +1,18 @@
+
+left {
+    bindings = <
+&kp TAB    &kp H     &kp T      &kp N         &kp S     &kp D        &kp F      &kp V          &kp DOT    &kp COMMA  &kp SQT  &kp BSPC
+&kp LCTRL  &kp A     &kp O      &kp E         &kp U     &kp I        &kp B      &kp J          &kp K      &kp Y      &kp SEMI    &kp RET
+&kp LSHFT  &kp L     &kp R      &kp G         &kp C     &kp P        &kp X      &kp M          &kp W      &kp Q      &kp Z &kp RSHFT
+                                &td_to_9      &mo_9_1   &kp BSPC     &kp SPACE  &mo_9_1        &td_to_5
+    >;
+};
+
+right {
+    bindings = <
+&kp SPACE  &kp SQT  &kp COMMA &kp DOT     &kp V        &kp F       &kp D      &kp H          &kp T       &kp N      &kp S     &kp TAB
+&kp RET    &kp SEMI &kp Y     &kp K       &kp J        &kp B       &kp I      &kp U          &kp E       &kp O      &kp A     &kp RCTRL
+&kp LSHFT  &kp Z    &kp Q     &kp W       &kp M        &kp X       &kp P      &kp C          &kp G       &kp R      &kp L     &kp RSHFT
+                              &td_to_0    &mo_8_1      &kp BSPC    &kp SPACE  &mo_8_1        &td_to_8
+    >;
+};
