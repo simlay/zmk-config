@@ -17,11 +17,11 @@
             bindings = <&mo 1>, <&mo 2>;
         };
 
-        mo_9_1: tap_dance_mo1 { compatible = "zmk,behavior-tap-dance";
+        mo_9_1: tap_dance_mo_9_1 { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&mo 9>, <&mo 1>;
         };
-        mo_8_1: tap_dance_mo1 { compatible = "zmk,behavior-tap-dance";
+        mo_8_1: tap_dance_mo_8_1 { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&mo 8>, <&mo 1>;
         };
