@@ -71,12 +71,12 @@
         td_to_8: tap_dance_to_8 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
-                bindings = <&kp LGUI>, <&to *>;
+                bindings = <&kp LGUI>, <&to 8>;
             };
         td_to_9: tap_dance_to_9 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
-                bindings = <&kp LGUI>, <&to *>;
+                bindings = <&kp LGUI>, <&to 9>;
             };
     };
     combos {
