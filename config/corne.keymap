@@ -27,53 +27,53 @@
         };
 
         // These are just helpers to increment/decrement the layers.
-        td_to_0: tap_dance_to_0 {
+        to_0: tap_dance_to_0 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 bindings = <&kp LGUI>, <&to 0>;
             };
-        td_to_1: tap_dance_to_1 {
+        to_1: tap_dance_to_1 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 bindings = <&kp LGUI>, <&to 1>;
             };
-        td_to_2: tap_dance_to_2 {
+        to_2: tap_dance_to_2 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 bindings = <&kp LGUI>, <&to 2>;
             };
-        td_to_3: tap_dance_to_3 {
+        to_3: tap_dance_to_3 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 bindings = <&kp LGUI>, <&to 3>;
             };
-        td_to_4: tap_dance_to_4 {
+        to_4: tap_dance_to_4 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 bindings = <&kp LGUI>, <&to 4>;
             };
-        td_to_5: tap_dance_to_5 {
+        to_5: tap_dance_to_5 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 bindings = <&kp LGUI>, <&to 5>;
             };
-        td_to_6: tap_dance_to_6 {
+        to_6: tap_dance_to_6 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 bindings = <&kp LGUI>, <&to 6>;
             };
-        td_to_7: tap_dance_to_7 {
+        to_7: tap_dance_to_7 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 bindings = <&kp LGUI>, <&to 7>;
             };
 
-        td_to_8: tap_dance_to_8 {
+        to_8: tap_dance_to_8 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 bindings = <&kp LGUI>, <&to 8>;
             };
-        td_to_9: tap_dance_to_9 {
+        to_9: tap_dance_to_9 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 bindings = <&kp LGUI>, <&to 9>;
