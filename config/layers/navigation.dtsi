@@ -1,8 +1,8 @@
 navigation {
     bindings = <
-&none  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &none              &none         &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_CLR
-&none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none              &none         &trans       &kp UP        &trans       &none         &none         &none
-&none  &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none              &none         &kp LEFT     &kp DOWN      &kp RIGHT    &none         &none         &none
-                                       &none            &trans             &kp SPACE     &kp SPACE    &trans        &none
+&none      &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &mkp MB1        &mkp MB2      &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_CLR
+&kp LCTRL  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB3        &mkp MB4      &trans       &kp UP        &trans       &none         &none         &kp RCTL
+&none      &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &mkp MB5        &none         &kp LEFT     &kp DOWN      &kp RIGHT    &none         &none         &none
+                                           &kp LGUI         &trans          &kp SPACE     &kp SPACE    &trans        &kp RGUI
     >;
 };
