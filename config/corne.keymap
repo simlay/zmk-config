@@ -69,6 +69,11 @@
                 #binding-cells = <0>;
                 bindings = <&kp LGUI>, <&to 9>;
             };
+        to_10: tap_dance_to_10 {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                bindings = <&kp LGUI>, <&to 10>;
+            };
     };
     combos {
         compatible = "zmk,combos";
