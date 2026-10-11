@@ -69,6 +69,13 @@ function initTypingTest() {
   const wpmDisplay = container.querySelector('.wpm-display');
   const input = container.querySelector('.typing-input');
   const resetBtn = container.querySelector('.reset-btn');
+  const pasteBtn = container.querySelector('.paste-btn');
+  const pasteModal = container.querySelector('.paste-modal');
+  const pasteTextarea = container.querySelector('.paste-textarea');
+  const pasteCancel = container.querySelector('.btn-cancel');
+  const pasteSubmit = container.querySelector('.btn-paste');
+
+  let customText = null; // when set, overrides sampleTexts
 
   // Populate text selector
   sampleTexts.forEach((st, i) => {
@@ -188,8 +195,13 @@ function initTypingTest() {
   }
 
   function startNewText() {
-    const idx = Math.floor(Math.random() * sampleTexts.length);
-    currentText = sampleTexts[idx].text;
+    if (customText !== null) {
+      currentText = customText;
+    } else {
+      const idx = Math.floor(Math.random() * sampleTexts.length);
+      currentText = sampleTexts[idx].text;
+      textSelect.value = idx;
+    }
     position = 0;
     startTime = null;
     wordTimes = [];
@@ -197,9 +209,40 @@ function initTypingTest() {
     initCharStates();
     renderText();
     updateWPM();
-    textSelect.value = idx;
     input.focus();
   }
+
+  // Paste modal handlers
+  function openPasteModal() {
+    pasteTextarea.value = '';
+    pasteModal.classList.add('active');
+    pasteTextarea.focus();
+  }
+
+  function closePasteModal() {
+    pasteModal.classList.remove('active');
+  }
+
+  function submitCustomText() {
+    const text = pasteTextarea.value.trim();
+    if (text.length === 0) return;
+    customText = text;
+    closePasteModal();
+    startNewText();
+  }
+
+  pasteBtn.addEventListener('click', openPasteModal);
+  pasteCancel.addEventListener('click', closePasteModal);
+  pasteSubmit.addEventListener('click', submitCustomText);
+  pasteModal.addEventListener('click', (e) => {
+    if (e.target === pasteModal) closePasteModal();
+  });
+  pasteTextarea.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      e.preventDefault();
+      submitCustomText();
+    }
+  });
 
   // Use keydown to capture individual keystrokes
   input.addEventListener('keydown', (e) => {
