@@ -4,6 +4,6 @@ r_hand {
 &kp TAB    &kp SQT  &kp COMMA &kp DOT     &kp V     &kp F        &kp D       &kp H       &kp T       &kp N      &kp S       &kp BSPC
 &kp LCTRL  &kp SEMI &kp Y     &kp K       &kp J     &kp B        &kp I       &kp U       &kp E       &kp O      &kp A       &kp RCTRL
 &kp LSHFT  &kp Z    &kp Q     &kp W       &kp M     &kp X        &kp P       &kp G       &kp C       &kp R      &kp L       &kp RSHFT
-                              &to_0       &none     &kp RET      &kp SPACE   &sl 8       &to_8
+                              &to_0       &to 8     &kp RET      &kp SPACE   &to 8       &to_8
     >;
 };
