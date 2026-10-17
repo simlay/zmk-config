@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Corne Layout</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 20px;
+      background: #1a1a2e;
+      color: #e0e0e0;
+      font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+      min-height: 100vh;
+    }
+
+    .main-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 30px;
+      max-width: 100%;
+      width: 100%;
+      justify-content: center;
+    }
+
+    #keyboard {
+      flex-shrink: 0;
+    }
+
+    #typing-test {
+      position: sticky;
+      top: 20px;
+      background: #16213e;
+      border: 1px solid #0f3460;
+      border-radius: 12px;
+      padding: 24px;
+      min-width: 380px;
+      max-width: 420px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 40px);
+    }
+
+    #typing-test > h2,
+    #typing-test > .text-select-row,
+    #typing-test > .wpm-display,
+    #typing-test > .hint {
+      flex-shrink: 0;
+    }
+
+    #typing-test h2 {
+      margin: 0 0 16px 0;
+      font-size: 18px;
+      color: #e94560;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .text-select-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .paste-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .paste-modal.active {
+      display: flex;
+    }
+
+    .paste-modal-content {
+      background: #16213e;
+      border: 1px solid #0f3460;
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .paste-modal-content h3 {
+      margin: 0;
+      color: #e94560;
+      font-size: 16px;
+    }
+
+    .paste-modal-content textarea {
+      flex: 1;
+      min-height: 150px;
+      background: #0a0a1a;
+      color: #e0e0e0;
+      border: 1px solid #0f3460;
+      border-radius: 6px;
+      padding: 12px;
+      font-size: 14px;
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    .paste-modal-content textarea:focus {
+      outline: none;
+      border-color: #e94560;
+    }
+
+    .paste-modal-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .paste-modal-actions button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-cancel {
+      background: #0f3460;
+      color: #e0e0e0;
+    }
+
+    .btn-cancel:hover {
+      background: #533483;
+    }
+
+    .btn-paste {
+      background: #e94560;
+      color: #e0e0e0;
+    }
+
+    .btn-paste:hover {
+      background: #c73650;
+    }
+
+    .text-select {
+      flex: 1;
+      padding: 8px 12px;
+      background: #0f3460;
+      color: #e0e0e0;
+      border: 1px solid #533483;
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .text-select:focus {
+      outline: none;
+      border-color: #e94560;
+    }
+
+    .reset-btn {
+      padding: 8px 14px;
+      background: #533483;
+      color: #e0e0e0;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .reset-btn:hover {
+      background: #e94560;
+    }
+
+    .wpm-display {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: #e94560;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .text-display {
+      background: #0a0a1a;
+      border: 1px solid #0f3460;
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 15px;
+      line-height: 1.8;
+      flex: 1;
+      overflow-y: auto;
+      word-wrap: break-word;
+      margin-bottom: 12px;
+      user-select: none;
+      cursor: default;
+      min-height: 0;
+    }
+
+    .text-display::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .text-display::-webkit-scrollbar-track {
+      background: #0a0a1a;
+      border-radius: 3px;
+    }
+
+    .text-display::-webkit-scrollbar-thumb {
+      background: #533483;
+      border-radius: 3px;
+    }
+
+    .char {
+      transition: color 0.1s;
+    }
+
+    .char.pending {
+      color: #4a4a6a;
+    }
+
+    .char.current {
+      color: #e0e0e0;
+      border-bottom: 2px solid #e94560;
+    }
+
+    .char.correct {
+      color: #4ade80;
+    }
+
+    .char.wrong {
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.25);
+      border-radius: 2px;
+    }
+
+    .typing-input {
+      position: fixed;
+      left: -9999px;
+      top: -9999px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .hint {
+      text-align: center;
+      font-size: 11px;
+      color: #666;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-wrapper">
+    <div id="keyboard">
+SVG_PLACEHOLDER
+    </div>
+
+    <div id="typing-test">
+      <h2>⌨ TYPING TEST</h2>
+      <div class="text-select-row">
+        <select class="text-select"></select>
+        <button class="reset-btn">Reset</button>
+        <button class="reset-btn paste-btn">Paste</button>
+      </div>
+
+      <div class="paste-modal">
+        <div class="paste-modal-content">
+          <h3>Paste your own text</h3>
+          <textarea class="paste-textarea" placeholder="Type or paste your text here..."></textarea>
+          <div class="paste-modal-actions">
+            <button class="btn-cancel">Cancel</button>
+            <button class="btn-paste">Start Typing</button>
+          </div>
+        </div>
+      </div>
+      <div class="wpm-display">WPM: 0</div>
+      <div class="text-display"></div>
+      <input class="typing-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <div class="hint">Type the text • Backspace to correct • ESC to restart</div>
+    </div>
+  </div>
+
+  <script src="sample-texts.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Initialize typing test after DOM is ready
+    document.addEventListener('DOMContentLoaded', initTypingTest);
+  </script>
+</body>
+</html>
