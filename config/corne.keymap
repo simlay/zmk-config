@@ -135,6 +135,7 @@
         #include "layers/td_symbols.dtsi"
         #include "layers/navigation.dtsi"
 
-        #include "layers/one_hand.dtsi"
+        #include "layers/left.dtsi"
+        #include "layers/right.dtsi"
     };
 };
