@@ -1,0 +1,8 @@
+layer_layer {
+    bindings = <
+&kp BSPC   &to 0     &to 1      &to 2     &to 3     &to 4        &to 5       &to 6      &to 9        &to 10     &none    &kp BSPC
+&kp LCTRL  &none     &none      &none     &none     &none        &none       &none      &none        &none      &none    &kp RCTL
+&kp LSHFT  &none     &none      &none     &none     &none        &none       &none      &none        &none      &none    &kp RSHFT
+                                &none     &none     &kp SPACE    &kp RET     &none      &none
+    >;
+};

@@ -93,6 +93,11 @@
             key-positions = <38 39>; // Replace with the indices of your two keys
             bindings = <&mo 7>;
         };
+        toggle_nav_combo {
+            timeout-ms = <50>;
+            key-positions = <37 40>; // Replace with the indices of your two keys
+            bindings = <&mo 10>;
+        };
         /*
         combo_double_space_td {
             timeout-ms = <50>;
@@ -137,5 +142,6 @@
 
         #include "layers/left.dtsi"
         #include "layers/right.dtsi"
+        #include "layers/layer_layer.dtsi"
     };
 };
