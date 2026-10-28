@@ -82,12 +82,10 @@
 
         #include "layers/base.dtsi"
         #include "layers/symbols.dtsi"
-
         #include "layers/r_symbols.dtsi"
         #include "layers/qwerty.dtsi"
         #include "layers/navigation.dtsi"
-
-        #include "layers/one_hand.dtsi"
+        #include "layers/one_hand.dtsi" // This has two layers in it
         #include "layers/layer_layer.dtsi"
     };
 };
