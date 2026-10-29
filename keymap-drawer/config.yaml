@@ -1,6 +1,8 @@
 parse_config:
   zmk_combos:
-    combo_base:
+    combo_base_l:
+      hidden: true
+    combo_base_r:
       hidden: true
     combo_bspc:
       hidden: true

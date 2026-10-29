@@ -61,20 +61,25 @@
             key-positions = <12 19>;
             bindings = <&kp BSPC>;
         };
-        combo_base {
+        combo_base_l {
             timeout-ms = <50>;
             key-positions = <13 14 15 16>;
             bindings = <&to 0>;
         };
-        combo_left {
+        combo_base_r {
             timeout-ms = <50>;
-            key-positions = <4 5>;
-            bindings = <&to 5>;
+            key-positions = <18 19 20 21>;
+            bindings = <&to 0>;
         };
         combo_right {
             timeout-ms = <50>;
-            key-positions = <6 7>;
+            key-positions = <4 5>;
             bindings = <&to 6>;
+        };
+        combo_left {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&to 5>;
         };
     };
     keymap {
