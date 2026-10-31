@@ -1,6 +1,6 @@
 layer_layer {
     bindings = <
-&none      &to 0     &to 1      &to 2     &to 3     &to 4        &to 5       &to 6      &none        &none      &none    &none
+&none      &to 0     &to 1      &to 2     &to 3     &to 4        &to 5       &to 6      &to 7        &to 8      &to 9    &none
 &none      &none     &none      &none     &none     &none        &none       &none      &none        &none      &none    &none
 &none      &none     &none      &none     &none     &none        &none       &none      &none        &none      &none    &none
                                 &none     &none     &kp SPACE    &kp RET     &none      &none
