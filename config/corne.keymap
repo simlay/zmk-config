@@ -71,23 +71,23 @@
             key-positions = <18 19 20 21>;
             bindings = <&to 0>;
         };
-        combo_si_one {
+        combo_si_one_r {
             timeout-ms = <50>;
             key-positions = <4 5>;
             bindings = <&to 5>;
         };
-        combo_si_one {
+        combo_si_one_r {
             timeout-ms = <50>;
             key-positions = <6 7>;
             bindings = <&to 5>;
         };
 
-        combo_ko_one {
+        combo_ko_r {
             timeout-ms = <50>;
             key-positions = <7 8>;
             bindings = <&to 8>;
         };
-        combo_ko_one {
+        combo_ko_l {
             timeout-ms = <50>;
             key-positions = <3 4>;
             bindings = <&to 8>;
