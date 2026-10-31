@@ -85,13 +85,13 @@
     keymap {
         compatible = "zmk,keymap";
 
-        #include "layers/base.dtsi"
-        #include "layers/symbols.dtsi"
+        #include "layers/default.dtsi"
         #include "layers/r_symbols.dtsi"
         #include "layers/qwerty.dtsi"
         #include "layers/navigation.dtsi"
-        #include "layers/right.dtsi"
-        #include "layers/left.dtsi"
+        #include "layers/si_one.dtsi"
         #include "layers/layer_layer.dtsi"
+
+        #include "layers/konomu.dtsi"
     };
 };
