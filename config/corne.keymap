@@ -90,7 +90,8 @@
         #include "layers/r_symbols.dtsi"
         #include "layers/qwerty.dtsi"
         #include "layers/navigation.dtsi"
-        #include "layers/one_hand.dtsi" // This has two layers in it
+        #include "layers/right.dtsi"
+        #include "layers/left.dtsi"
         #include "layers/layer_layer.dtsi"
     };
 };
