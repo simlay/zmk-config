@@ -11,7 +11,7 @@ k_base {
 k_sec {
     bindings = <
 &kp TAB    &kp J     &kp K     &kp M       &kp SQT   &kp MINUS    &kp MINUS   &kp SQT     &kp M       &kp K      &kp J       &kp TAB
-&kp LCTRL  &kp Y     &kp P     &kp L       &kp DOT   &kp B        &kp B       &kp DOT     &kp L       &kp P      &kp Y       &kp RCTRL
+&kp LCTRL  &kp Y     &kp P     &kp L       &kp DOT   &kp Q        &kp Q       &kp DOT     &kp L       &kp P      &kp Y       &kp RCTRL
 &kp LSHFT  &kp X     &kp B     &kp V       &kp COMMA &kp Z        &kp Z       &kp COMMA   &kp V       &kp B      &kp X       &kp RSHFT
                                &kp LGUI    &none     &kp RET      &kp RET     &none       &kp RGUI
     >;

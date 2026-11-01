@@ -15,6 +15,18 @@
             #binding-cells = <0>;
             bindings = <&mo 1>, <&mo 2>;
         };
+        /*
+        mmv {
+            acceleration-exponent = <1>;      // 1
+            time-to-max-speed-ms = <300>;    // 40
+            delay-ms = <0>;                   // 0
+        };
+        msc {
+            acceleration-exponent = <1>;      // 0
+            time-to-max-speed-ms = <40>;      // 500
+            delay-ms = <0>;                   // 10
+        };
+        */
     };
     combos {
         compatible = "zmk,combos";
@@ -92,6 +104,16 @@
             key-positions = <3 4>;
             bindings = <&to 8>;
         };
+        combo_mouse_l {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&to 12>;
+        };
+        combo_mouse_r {
+            timeout-ms = <50>;
+            key-positions = <18 19>;
+            bindings = <&to 12>;
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -104,5 +126,6 @@
         #include "layers/layer_layer.dtsi"
 
         #include "layers/konomu.dtsi"
+        #include "layers/mouse.dtsi"
     };
 };

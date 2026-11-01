@@ -1,0 +1,8 @@
+mouse {
+    bindings = <
+&none      &none    &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &mkp MB4      &mkp MB4     &msc SCRL_UP   &mmv MOVE_UP   &msc SCRL_DOWN  &none &none
+&kp LCTRL  &none    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB5      &mkp MB5     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none &kp RCTL
+&kp LGUI   &none    &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none         &none        &msc SCRL_LEFT &none          &msc SCRL_RIGHT &none &kp RGUI
+                                    &mkp MB3        &mkp MB2         &mkp MB1      &mkp MB1     &mkp MB2       &mkp MB3
+    >;
+};
