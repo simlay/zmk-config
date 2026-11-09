@@ -97,13 +97,16 @@ pub fn init() {
     with_typing_test(|test, td, wp| {
         test.start_new_text(td, wp);
     });
+    let _ = input.focus();
 
     // Reset button handler
     if let Some(reset_btn) = reset_btn {
+        let input_reset = input.clone();
         let closure = wasm_bindgen::closure::Closure::wrap(Box::new(move |_e: web_sys::MouseEvent| {
             with_typing_test(|test, td, wp| {
                 test.start_new_text(td, wp);
             });
+            let _ = input_reset.focus();
         }) as Box<dyn FnMut(_)>);
         let _ = reset_btn.add_event_listener_with_callback("click", closure.as_ref().unchecked_ref());
         closure.forget();
@@ -133,6 +136,7 @@ pub fn init() {
 
     // Paste submit handler
     if let Some(paste_submit) = paste_submit {
+        let input_submit = input.clone();
         let closure = wasm_bindgen::closure::Closure::wrap(Box::new(move |_e: web_sys::MouseEvent| {
             if let Some(textarea) = get_paste_textarea() {
                 if let Some(textarea_el) = textarea.dyn_ref::<web_sys::HtmlInputElement>() {
@@ -142,6 +146,7 @@ pub fn init() {
                         with_typing_test(|test, td, wp| {
                             test.submit_custom_text(trimmed, td, wp);
                         });
+                        let _ = input_submit.focus();
                     }
                 }
             }
@@ -151,6 +156,7 @@ pub fn init() {
     }
 
     // Typing input keydown handler
+    let input_keydown = input.clone();
     let closure = wasm_bindgen::closure::Closure::wrap(Box::new(move |e: web_sys::KeyboardEvent| {
         let key = e.key();
 
@@ -164,6 +170,7 @@ pub fn init() {
             with_typing_test(|test, td, wp| {
                 test.start_new_text(td, wp);
             });
+            let _ = input_keydown.focus();
         } else if key.len() == 1 {
             // Regular character key - let it pass through for keyboard highlighting
             with_typing_test(|test, td, wp| {
