@@ -59,6 +59,16 @@ document.addEventListener('keyup', (e) => {
 // ─── Typing Test & Training Tool ───
 
 const TYPING_WINDOW_MS = 3 * 60 * 1000; // 3 minutes in ms
+const TYPING_WORD_COUNT = 100;
+
+function generateRandomText() {
+  let text = '';
+  for (let i = 0; i < TYPING_WORD_COUNT; i++) {
+    const word = commonWords[Math.floor(Math.random() * commonWords.length)];
+    text += (i === 0 ? '' : ' ') + word;
+  }
+  return text;
+}
 
 function initTypingTest() {
   const container = document.getElementById('typing-test');
@@ -75,15 +85,13 @@ function initTypingTest() {
   const pasteCancel = container.querySelector('.btn-cancel');
   const pasteSubmit = container.querySelector('.btn-paste');
 
-  let customText = null; // when set, overrides sampleTexts
+  let customText = null; // when set, overrides generated text
 
   // Populate text selector
-  sampleTexts.forEach((st, i) => {
-    const opt = document.createElement('option');
-    opt.value = i;
-    opt.textContent = st.name;
-    textSelect.appendChild(opt);
-  });
+  const randomOpt = document.createElement('option');
+  randomOpt.value = 'random';
+  randomOpt.textContent = 'Random Words';
+  textSelect.appendChild(randomOpt);
 
   let currentText = '';
   let position = 0; // current character position
@@ -198,9 +206,8 @@ function initTypingTest() {
     if (customText !== null) {
       currentText = customText;
     } else {
-      const idx = Math.floor(Math.random() * sampleTexts.length);
-      currentText = sampleTexts[idx].text;
-      textSelect.value = idx;
+      currentText = generateRandomText();
+      textSelect.value = 'random';
     }
     position = 0;
     startTime = null;
