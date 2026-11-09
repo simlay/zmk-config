@@ -28,8 +28,13 @@ jobs:
           name: drawings
           path: keymap-drawer
 
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: trunk
+
       - name: Build interactive
-        run: ./build-interactive.sh
+        working-directory: ./keymap-drawer
+        run: trunk build
 
       - name: Deploy to gh-pages
         run: |
