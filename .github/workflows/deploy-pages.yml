@@ -37,16 +37,15 @@ jobs:
 
       - name: Build interactive
         working-directory: ./keymap-drawer
-        run: trunk build
+        run: trunk build --release
 
       - name: Deploy to gh-pages
         run: |
           git config --global user.email "sebastian.imlay@gmail.com"
           git config --global user.name "Sebastian Imlay"
           git checkout --orphan gh-pages
-          echo '<meta http-equiv="refresh" content="0; url=keymap-drawer/dist/index.html"><a href="keymap-drawer/index.html">Redirect</a>' > index.html
-          git add index.html
-          git add --force keymap-drawer/
+          mv keymap-drawer/dist/* ./
+          git add --force index.html keymap-drawer-*.wasm keymap-drawer-*.js
           git rm -r --cached .
           git reset
           git add keymap-drawer/ index.html
