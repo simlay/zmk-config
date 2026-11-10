@@ -48,6 +48,6 @@ jobs:
           git add --force index.html keymap-drawer-*.wasm keymap-drawer-*.js
           git rm -r --cached .
           git reset
-          git add keymap-drawer/ index.html
+          git add index.html keymap-drawer-*.wasm keymap-drawer-*.js
           git commit --allow-empty -m "Deploy keymap"
           git push origin gh-pages --force
