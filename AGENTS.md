@@ -10,7 +10,8 @@ One of the goals is to support use with one hand on either half of the keyboard
 layout.
 
 There is a interactive static webpage that's built from the `make render` rule.
-It exists in `./keymap-drawer`. The files of that static page are
-`keymap-drawer/app.js`, `keymap-drawer/index.base.html` and
-`keymap-drawer/corne.svg` which are bundled together to make
-`keymap-drawer/index.html`.
+It exists in `./keymap-drawer`. The files of that are a rust webassembly
+project that use `trunk`.
+`keymap-drawer/corne.svg` is bundled into the rust via the `include_str!` macro.
+`keymap-drawer/index.html` is the input HTML. Trunk takes it and generates
+stuff into `keymap-drawer/dist/`

@@ -20,6 +20,8 @@ pub struct TypingTest {
 
 impl TypingTest {
     pub fn new() -> Self {
+        // Use current time in ms as seed for different text each time
+        let seed = (js_sys::Date::now() / 1000.0) as u64;
         Self {
             current_text: String::new(),
             position: 0,
@@ -28,7 +30,7 @@ impl TypingTest {
             word_times: Vec::new(),
             is_finished: false,
             custom_text: None,
-            rng: SimpleRng::new(42),
+            rng: SimpleRng::new(seed),
         }
     }
 

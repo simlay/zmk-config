@@ -1,7 +1,7 @@
 render:
 	keymap -c keymap-drawer/config.yaml parse -z ./config/corne.keymap > keymap-drawer/corne.yml
 	keymap draw keymap-drawer/corne.yml > keymap-drawer/corne.svg
-	./build-interactive.sh
+	trunk build -C ./keymap-drawer/
 
 watch:
 	watchexec -w ./config/ 'make render'
