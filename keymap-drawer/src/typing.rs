@@ -4,6 +4,7 @@ use web_sys::{Element, HtmlElement};
 use crate::words::{SimpleRng, WORDS};
 
 const TYPING_WINDOW_MS: u64 = 3 * 60 * 1000;
+const WORD_TIME_LIMIT_MS: u64 = 60 * 1000;
 const TYPING_WORD_COUNT: usize = 100;
 
 #[derive(Clone)]
@@ -12,7 +13,10 @@ pub struct TypingTest {
     position: usize,
     char_states: Vec<u8>, // 0=pending, 1=confirmed, 2=wrong
     start_time: Option<u64>,
-    word_times: Vec<u64>,
+    // Each completed word records its finish timestamp and how long it took
+    // to type (from first letter to last letter), in milliseconds.
+    word_times: Vec<(u64, u64)>,
+    current_word_start: Option<u64>,
     is_finished: bool,
     custom_text: Option<String>,
     rng: SimpleRng,
@@ -28,6 +32,7 @@ impl TypingTest {
             char_states: Vec::new(),
             start_time: None,
             word_times: Vec::new(),
+            current_word_start: None,
             is_finished: false,
             custom_text: None,
             rng: SimpleRng::new(seed),
@@ -57,7 +62,7 @@ impl TypingTest {
         position: usize,
         char_states: &[u8],
         current_text: &str,
-        word_times: &[u64],
+        word_times: &[(u64, u64)],
     ) {
         // Clear and rebuild the text display
         let _ = text_display.set_inner_html("");
@@ -98,30 +103,55 @@ impl TypingTest {
             }
         }
 
-        // Update WPM
+        // Update WPM based on the time taken to type each word.
         let now = js_sys::Date::now() as u64;
-        let mut filtered_times: Vec<u64> = word_times.iter().filter(|&&t| now - t < TYPING_WINDOW_MS).copied().collect();
-        
-        if filtered_times.is_empty() {
+        // Only consider words typed recently that were each completed within
+        // the per-word time limit (a longer duration means the user walked away).
+        let valid_words: Vec<&(u64, u64)> = word_times
+            .iter()
+            .filter(|&&(end, duration)| {
+                now - end < TYPING_WINDOW_MS && duration <= WORD_TIME_LIMIT_MS
+            })
+            .collect();
+
+        if valid_words.is_empty() {
             let _ = wpm_display.set_text_content(Some("WPM: 0"));
             return;
         }
 
-        filtered_times.sort();
-        let elapsed_min = (now - filtered_times[0]) as f64 / 60000.0;
+        let total_duration_ms: u64 = valid_words.iter().map(|&&(_, duration)| duration).sum();
+        let elapsed_min = total_duration_ms as f64 / 60000.0;
         if elapsed_min <= 0.0 {
             let _ = wpm_display.set_text_content(Some("WPM: 0"));
             return;
         }
 
-        let wpm = (filtered_times.len() as f64 / elapsed_min).round() as u32;
+        let wpm = (valid_words.len() as f64 / elapsed_min).round() as u32;
         let _ = wpm_display.set_text_content(Some(&format!("WPM: {}", wpm)));
     }
 
     pub fn advance_position(&mut self) {
-        if self.current_text.chars().nth(self.position) == Some(' ') {
-            self.word_times.push(js_sys::Date::now() as u64);
+        let now = js_sys::Date::now() as u64;
+        let p = self.position;
+
+        // A new word begins when typing the very first character of the text
+        // or the character that immediately follows a space.
+        let starts_word = p == 0 || self.current_text.chars().nth(p - 1) == Some(' ');
+        if starts_word {
+            self.current_word_start = Some(now);
         }
+
+        // A word finishes when the typed character is followed by a space or
+        // is the final character of the text (its last letter was just typed).
+        let word_finished = p + 1 >= self.current_text.len()
+            || self.current_text.chars().nth(p + 1) == Some(' ');
+        if word_finished {
+            if let Some(start) = self.current_word_start {
+                self.word_times.push((now, now - start));
+            }
+            self.current_word_start = None;
+        }
+
         self.position += 1;
         if self.position >= self.current_text.len() {
             self.is_finished = true;
