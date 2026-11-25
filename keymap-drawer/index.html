@@ -202,14 +202,19 @@
       border-radius: 8px;
       padding: 16px;
       font-size: 15px;
-      line-height: 1.8;
-      flex: 1;
-      overflow-y: auto;
+      line-height: 40px;
+      flex: 0 0 auto;
+      height: 120px;
       word-wrap: break-word;
       margin-bottom: 12px;
       user-select: none;
       cursor: default;
-      min-height: 0;
+      overflow: hidden;
+    }
+
+    .typing-line {
+      display: block;
+      white-space: nowrap;
     }
 
     .text-display::-webkit-scrollbar {
@@ -232,6 +237,10 @@
 
     .char.pending {
       color: #4a4a6a;
+    }
+
+    .char.preview {
+      color: #2a2a4a;
     }
 
     .char.current {
@@ -289,7 +298,7 @@
           </div>
         </div>
       </div>
-      <div class="wpm-display">WPM: 0</div>
+      <div class="wpm-display"><span id="wpm">WPM: 0</span><span id="cpm" style="margin-left: 16px;">CPM: 0</span></div>
       <div class="text-display"></div>
       <input class="typing-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
       <div class="hint">Type the text • Backspace to correct • ESC to restart</div>
