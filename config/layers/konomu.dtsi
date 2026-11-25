@@ -4,7 +4,7 @@ k_base {
 &kp BSPC   &kp F      &kp D      &kp N     &kp I     &kp G        &kp G       &kp I      &kp N        &kp D      &kp F       &kp BSPC
 &kp LCTRL  &kp S      &kp T      &kp H     &kp E     &kp O        &kp O       &kp E      &kp H        &kp T      &kp S       &kp RCTRL
 &kp LSHFT  &kp C      &kp W      &kp R     &kp A     &kp U        &kp U       &kp A      &kp R        &kp W      &kp C       &kp RSHFT
-                                 &kp LGUI  &sl 9     &kp SPACE    &kp SPACE   &sl 9      &kp RGUI
+                                 &kp LGUI  &mo 6     &kp SPACE    &kp SPACE   &mo 6      &kp RGUI
     >;
 };
 
